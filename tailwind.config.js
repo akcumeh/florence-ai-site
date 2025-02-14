@@ -66,7 +66,7 @@ export default {
                 4: "24px",
                 5: "32px",
                 6: "48px",
-                
+
                 smol: "25%",
                 med: "40%",
                 lrg: "60%",
@@ -79,7 +79,7 @@ export default {
                 4: "24px",
                 5: "32px",
                 6: "48px",
-                
+
                 smol: "25%",
                 med: "40%",
                 lrg: "60%",
@@ -95,7 +95,7 @@ export default {
                 "2xl": "48px",
             },
             fontFamily: {
-                "yellix": ["Yellix", "sans-serif"], 
+                "yellix": ["Yellix", "sans-serif"],
                 "yellix-bold": ["Yellix-Black", "sans-serif"],
             },
             // ...

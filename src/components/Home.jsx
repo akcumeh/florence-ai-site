@@ -28,7 +28,10 @@ const Home = () => {
             />
 
             {currentPage === 'homepage' ? (
-                <Homepage onAsk={askClaude} />
+                <Homepage
+                    onAsk={setCurrentPage}
+                    setNumTokens={setNumTokens}
+                />
             ) : (
                 <Conversation />
             )}

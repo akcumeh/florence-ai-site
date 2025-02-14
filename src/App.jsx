@@ -1,29 +1,29 @@
-// import React from "react";
+// import { useState } from 'react';
+import './App.css';
 import {
-    BrowserRouter as 
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
-import Home from "./components/Home";
+import Home from './components/Home';
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Home />,
-        children: [
-            // kids
-        ],
-    },
-]);
+const router = createBrowserRouter({
+    path: '/',
+    element: <Home />,
+    children: [
+        {
+            path: "about",
+            element: <About />,
+            children: [],
+        },
+    ],
+});
 
-const App = () => {
+function App() {
     return (
-        <>
-            <div className="hello">
-                <h1>Hi, how can I help you today?</h1>
-            </div>
-            {/* <RouterProvider router={router} /> */}
-        </>
+        <div className='text-floBlue text-md'>
+           <p>HI!</p>
+           <RouterProvider router={router} />
+        </div>
     );
 };
 
