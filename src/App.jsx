@@ -1,26 +1,9 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
 import Conversation from './components/Conversation';
 import FAQ from './components/FAQ';
 import Error from './components/Error';
-
-// const router = createBrowserRouter({
-//     const Routes = [
-//         "/",
-//         // "/about",
-//     ];
-
-//     path: '/',
-//     element: <Home />,
-//     children: [
-//         // {
-//         //     path: "about",
-//         //     element: <About />,
-//         //     children: [],
-//         // },
-//     ],
-// });
 
 function App() {
     return (
