@@ -1,14 +1,31 @@
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
-const TextField = ({
-    width,
-}) => {
+import aiIcon from "../assets/images/icons/ai_icon.png";
+import plusIcon from "../assets/images/icons/plus.png";
+
+const TextField = ({ width }) => {
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate('/conversation');
+    };
+
     return (
-        <div className={`flex ${width ? `w-${width}` : 'w-full'} h-[1/10]`}>
-            <img src="../assets/icons/plus.png" alt="add" className="w-2 h-2" />
-            <input type="text" placeholder="What can I help you with today?" className="border-none w-[3/4] h-6 p-1" />
-            <img src="../assets/ai_icon.png" alt="AI" className="w-5 h-5 background-floWhite " />
-        </div>
+        <form onSubmit={handleSubmit} className={`flex bg-floWhite flex-row ${width ? `w-${width}` : 'w-full'} px-5 h-6 md:h-7 lg:h-[84px] border-floAsh border-[1px] my-6 md:my-4 border-floAsh border-solid rounded-full justify-between items-center w-full`}>
+            <button type="button" className='file-upload'>
+                <img src={plusIcon} alt="add" className="w-3 h-3 m-1" />
+            </button>
+            <input
+                type="text"
+                placeholder="What can I help you with today?"
+                className="w-xlrg py-4 h-full border-none focus:outline-none bg-floWhite placeholder-floAsh font-yellix"
+            />
+            <button type="submit">
+                <img src={aiIcon} alt="" className="w-5 h-5 bg-floWhite" />
+            </button>
+        </form>
     );
 };
 
@@ -18,6 +35,6 @@ TextField.defaultProps = {
 
 TextField.propTypes = {
     width: PropTypes.string,
-}
+};
 
 export default TextField;

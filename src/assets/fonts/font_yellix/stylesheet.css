@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'Yellix';
+    src: url('Yellix-MediumItalic.eot');
+    src: local('Yellix Medium Italic'), local('Yellix-MediumItalic'),
+        url('Yellix-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('Yellix-MediumItalic.woff2') format('woff2'),
+        url('Yellix-MediumItalic.woff') format('woff'),
+        url('Yellix-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Yellix';
+    src: url('Yellix-Medium.eot');
+    src: local('Yellix Medium'), local('Yellix-Medium'),
+        url('Yellix-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Yellix-Medium.woff2') format('woff2'),
+        url('Yellix-Medium.woff') format('woff'),
+        url('Yellix-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yellix';
+    src: url('Yellix-LightItalic.eot');
+    src: local('Yellix Light Italic'), local('Yellix-LightItalic'),
+        url('Yellix-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Yellix-LightItalic.woff2') format('woff2'),
+        url('Yellix-LightItalic.woff') format('woff'),
+        url('Yellix-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Yellix';
+    src: url('Yellix-BlackItalic.eot');
+    src: local('Yellix Black Italic'), local('Yellix-BlackItalic'),
+        url('Yellix-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Yellix-BlackItalic.woff2') format('woff2'),
+        url('Yellix-BlackItalic.woff') format('woff'),
+        url('Yellix-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Yellix';
+    src: url('Yellix-Regular.eot');
+    src: local('Yellix Regular'), local('Yellix-Regular'),
+        url('Yellix-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Yellix-Regular.woff2') format('woff2'),
+        url('Yellix-Regular.woff') format('woff'),
+        url('Yellix-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yellix';
+    src: url('Yellix-Black.eot');
+    src: local('Yellix Black'), local('Yellix-Black'),
+        url('Yellix-Black.eot?#iefix') format('embedded-opentype'),
+        url('Yellix-Black.woff2') format('woff2'),
+        url('Yellix-Black.woff') format('woff'),
+        url('Yellix-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yellix';
+    src: url('Yellix-BoldItalic.eot');
+    src: local('Yellix Bold Italic'), local('Yellix-BoldItalic'),
+        url('Yellix-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Yellix-BoldItalic.woff2') format('woff2'),
+        url('Yellix-BoldItalic.woff') format('woff'),
+        url('Yellix-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Yellix';
+    src: url('Yellix-Bold.eot');
+    src: local('Yellix Bold'), local('Yellix-Bold'),
+        url('Yellix-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Yellix-Bold.woff2') format('woff2'),
+        url('Yellix-Bold.woff') format('woff'),
+        url('Yellix-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yellix';
+    src: url('Yellix-SemiBold.eot');
+    src: local('Yellix SemiBold'), local('Yellix-SemiBold'),
+        url('Yellix-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Yellix-SemiBold.woff2') format('woff2'),
+        url('Yellix-SemiBold.woff') format('woff'),
+        url('Yellix-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yellix';
+    src: url('Yellix-Light.eot');
+    src: local('Yellix Light'), local('Yellix-Light'),
+        url('Yellix-Light.eot?#iefix') format('embedded-opentype'),
+        url('Yellix-Light.woff2') format('woff2'),
+        url('Yellix-Light.woff') format('woff'),
+        url('Yellix-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yellix';
+    src: url('Yellix-Thin.eot');
+    src: local('Yellix Thin'), local('Yellix-Thin'),
+        url('Yellix-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Yellix-Thin.woff2') format('woff2'),
+        url('Yellix-Thin.woff') format('woff'),
+        url('Yellix-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yellix';
+    src: url('Yellix-ExtraBold.eot');
+    src: local('Yellix ExtraBold'), local('Yellix-ExtraBold'),
+        url('Yellix-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('Yellix-ExtraBold.woff2') format('woff2'),
+        url('Yellix-ExtraBold.woff') format('woff'),
+        url('Yellix-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yellix';
+    src: url('Yellix-ExtraBoldItalic.eot');
+    src: local('Yellix ExtraBold Italic'), local('Yellix-ExtraBoldItalic'),
+        url('Yellix-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Yellix-ExtraBoldItalic.woff2') format('woff2'),
+        url('Yellix-ExtraBoldItalic.woff') format('woff'),
+        url('Yellix-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+

@@ -6,15 +6,15 @@ const Footer = ({
 }) => {
     return (
         <>
-            <div className={`${isHomepage ? "hidden" : ""} text-base text-floAsh flex flex-row justify-center items-center `}>
+            <footer className={`${!isHomepage ? "hidden" : ""} text-sm my-2 text-floAsh`}>
                 Get the most out of Florence<span className="text-floBlue">*</span> - try our <a href="https://wa.me/12164935624/" className="text-waGreen ">WhatsApp</a> and <a href="https://t.me/FlorenceAIBot" className="text-tgBlue ">Telegram</a> bots for enhanced capabilities.
 
-            </div>
+            </footer>
 
             {/* if footer is convo page */}
-            <div className={`${isConversationPage}`}>
+            <footer className={`${isConversationPage ? "" : "hidden"} text-sm my-2 text-floAsh`}>
                 Florence<span className="text-floBlue">*</span> strives for accuracy, but verify all provided information independently.
-            </div>
+            </footer>
         </>
     );
 };

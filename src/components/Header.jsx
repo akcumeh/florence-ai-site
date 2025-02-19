@@ -1,24 +1,26 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import floLogo from '../assets/images/logo_blue.png';
 
 const Header = ({
     numTokens,
     isHomepage,
 }) => {
     return (
-        <nav className="flex flex-row w-full px-1/10 py-6">
-            <a className="w-4 h-4 justify-left mx-2 my-1" href="/">
-                <img src="../assets/icons/logo_blue.png" alt="Flo*" />
-            </a>
+        <nav className="flex flex-row w-full h-6 px-1/10 py-6 justify-between items-center">
+            <Link to="/" className="ml-2 w-auto h-auto">
+                <img src={floLogo} alt="Flo*" className="w-auto h-auto" />
+            </Link>
             <h3 className={`text-base ${isHomepage ? "hidden " : ""}`}>Florence<span className='text-floBlue'>*</span> AI</h3>
-            <ul className="justify-right mx-1 gap-1 my-1">
+            <ul className="flex mx-1 gap-1 my-1">
                 <li>
                     <button className="border-none px-4 py-3 hover:background-floAsh hover:text-floBlue">
-                        <a href="/contact">Contact Us</a>
+                        <Link to="/contact">Contact Us</Link>
                     </button>
                 </li>
                 <li>
-                    <button className="b-[2px] px-4 py-3 hover:border-floBlue hover:b-1 hover:text-floBlue">
-                        {<a href="/login">Login</a>} | {<a href="/signup">${numTokens} Tokens</a>}
+                    <button className="token border-[4px] rounded-full px-3 py-2 border-floBlue hover:text-floBlue">
+                        <Link to="/signup">{`${numTokens} Tokens`}</Link>
                     </button>
                 </li>
             </ul>

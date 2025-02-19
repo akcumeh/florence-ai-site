@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Assets
-*/assets/fonts
+# */assets/fonts
