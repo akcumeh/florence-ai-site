@@ -9,7 +9,7 @@ const FAQLink = () => {
                 <span>
                     <span className="text-floBlue">FAQ: </span>
                     <span className="text-floBlack">You&apos;ve got </span>
-                    <span className="text-floBlue">questions </span>
+                    <span className="text-floBlue">questions</span>
                     <span className="text-floBlack">, we&apos;ve got </span>
                     <span className="text-floBlue">answers!</span>
                 </span>

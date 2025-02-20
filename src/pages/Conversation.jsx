@@ -1,6 +1,6 @@
-import Header from "./Header";
-import TextField from "./TextField";
-import Footer from "./Footer";
+import Header from "../components/Header";
+import TextField from "../components/TextField";
+import Footer from "../components/Footer";
 import PropTypes from 'prop-types';
 
 const Conversation = ({

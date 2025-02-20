@@ -14,7 +14,7 @@ body {
      background-color: #fafafa;
      
      /* Standard Yellix */
-     font-family: 'Yellix',  sans-serif;
+     font-family: 'Yellix', sans-serif;
      font-weight: normal;
      font-style: normal;
      font-size: 16px;
@@ -38,35 +38,42 @@ body {
 
 /* Light Yellix */
 .font-yellix-light {
-     font-family: 'Yellix',  sans-serif;
+     font-family: 'Yellix', sans-serif;
      font-weight: 300;
 }
 
 /* Semi Yellix */
 .font-yellix-semi {
-     font-family: 'Yellix',  sans-serif;
+     font-family: 'Yellix', sans-serif;
      font-weight: 500;
      line-height: 1.25;
 }
 
 /* Semi Yellix 2 */
 .font-yellix-semi2 {
-     font-family: 'Yellix',  sans-serif;
+     font-family: 'Yellix', sans-serif;
      font-weight: 600;
      line-height: 1.25;
 }
 
 /* Bold Yellix */
 .font-yellix-bold {
-     font-family: 'Yellix',  sans-serif;
+     font-family: 'Yellix', sans-serif;
      font-weight: bold;
 }
 
 /* Extra Bold Yellix */
 .font-yellix-extra {
-     font-family: 'Yellix',  sans-serif;
+     font-family: 'Yellix', sans-serif;
      font-weight: 900;
      font-style: normal;
+}
+
+/* Light Italic Yellix */
+.font-yellix-italight {
+     font-family: 'Yellix', sans-serif;
+     font-weight: 300;
+     font-style: italic;
 }
 
 
