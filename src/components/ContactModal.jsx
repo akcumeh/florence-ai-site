@@ -69,7 +69,7 @@ const ContactModal = () => {
                             </div>
                         </div>
                         <div className="flex flex-row justify-end">
-                            <button className="text-floWhite bg-floBlue rounded-full p-1 w-med text-base font-yellix-semi hover:text-floBlue" onClick={toggleModal}>
+                            <button className="text-floWhite bg-floBlue rounded-full p-1 w-med text-base font-yellix-semi hover:bg-floAsh hover:bg-opacity-25" onClick={toggleModal}>
                                 Close
                             </button>
                         </div>
