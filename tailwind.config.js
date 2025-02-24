@@ -40,6 +40,7 @@ export default {
                 4: "24px",
                 5: "32px",
                 6: "48px",
+                7: "64px",
 
                 smol: "25%",
                 med: "40%",

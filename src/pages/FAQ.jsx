@@ -1,7 +1,7 @@
+import { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Expandable from "../components/Expandable";
-import { useState } from "react";
 
 const FAQMap = [
     {
@@ -27,32 +27,51 @@ const FAQMap = [
     {
         id: 5,
         header: "How do I use Florence Bot on WhatsApp or Telegram?",
-        body: "You'll be amazed at how easy it is to use Florence Bot! Just add it as a contact on WhatsApp or Telegram, just like you would add anyone else. Once you've done that, send the message <span className='text-floBlue'>/start</span> to bring Florence Bot to life. Then, type <span className='text-floBlue'>/help</span> to discover the full range of its abilities.",
+        body: "You'll be amazed at how easy it is to use Florence Bot! Just add it as a contact on WhatsApp or Telegram, just like you would add anyone else. Once you've done that, send the message /start to bring Florence Bot to life. Then, type /help to discover the full range of its abilities.",
     },
-]
+];
 
 const FAQ = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    // Track expanded state for each FAQ item separately
+    const [expandedIds, setExpandedIds] = useState(new Set());
 
-    const expand = () => setIsOpen(!isOpen);
+    const toggleExpand = (id) => {
+        setExpandedIds(prev => {
+            const newSet = new Set(prev);
+            if (newSet.has(id)) {
+                newSet.delete(id);
+            } else {
+                newSet.add(id);
+            }
+            return newSet;
+        });
+    };
 
     return (
-        <div className="w-[100%] flex flex-col items-center justify-between my-6">
-            <Header numTokens={10} />
-            <div className="bg-floBlue text-floWhite text-sm font-yellix-light p-1 w-6 rounded-full">FAQs</div>
+        <div className="w-full flex flex-col items-center justify-between my-1">
+            <Header
+                isHomePage={false}
+                numTokens={10}
+            />
+            <div className="bg-floBlue text-floWhite text-sm font-yellix-light px-4 py-1 rounded-full">FAQs</div>
             <h1 className="text-xl w-full md:w-med font-yellix-semi2 mt-6">
                 We&apos;re here to answer all your questions<span className="text-floBlue">*</span>
             </h1>
-            {isOpen && FAQMap.map((faq) => {
-                <Expandable
-                    key={faq.id}
-                    q={faq.header}
-                    a={faq.body}
-                    isOpen={isOpen}
-                    expand={expand}
-                />
-            })}
-            <Footer />
+            <div className="w-full lg:w-med space-y-4 mt-6">
+                {FAQMap.map((faq) => (
+                    <Expandable
+                        key={faq.id}
+                        q={faq.header}
+                        a={faq.body}
+                        isOpen={expandedIds.has(faq.id)}
+                        expand={() => toggleExpand(faq.id)}
+                    />
+                ))}
+            </div>
+            <br />
+            <br />
+            <br />
+            <Footer isHomepage={true} />
         </div>
     );
 };

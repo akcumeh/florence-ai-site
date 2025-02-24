@@ -6,7 +6,7 @@ const Error = () => {
             <span className="mt-2">
                 Florence<span className="text-floBlue">*</span> AI
             </span>
-            <h1 className="text-error font-yellix-extra mt-6">
+            <h1 className="text-error font-yellix-extra mt-7">
                 404<span className="text-floBlue">*</span>
             </h1>
             <h4 className="text-lg font-yellix-semi2 mt-2">
