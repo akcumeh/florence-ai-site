@@ -1,11 +1,9 @@
-export default {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-}
+import tailwindcss from 'tailwindcss'
+import autoprefixer from 'autoprefixer'
 
-// oya na lfg.
-// can this be gamed?
-// I guess I will soon find out.
-// gamed it is.
+export default {
+    plugins: [
+        tailwindcss,
+        autoprefixer,
+    ],
+}

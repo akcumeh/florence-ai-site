@@ -7,78 +7,108 @@
 @import 'tailwindcss/utilities';
 
 body {
-     width: 100%;
-     padding: 0 5%;
-     margin: 0;
+    width: 100%;
+    padding: 0 5%;
+    margin: 0;
 
-     background-color: #fafafa;
-     
-     /* Standard Yellix */
-     font-family: 'Yellix', sans-serif;
-     font-weight: normal;
-     font-style: normal;
-     font-size: 16px;
+    background-color: #fafafa;
+
+    /* Standard Yellix */
+    font-family: 'Yellix', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
 }
 
 #root {
-     padding: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .token {
-     background:
-          linear-gradient(#fafafa 0 0) padding-box,
-          linear-gradient(to right, #badcff, #4da9ff) border-box;
-     color: #0a0a0a;
-     padding: 14.5px;
-     border: 3px solid transparent;
-     border-radius: 2rem;
-     display: inline-block;
-     margin: 0 5px;
+    background:
+        linear-gradient(#fafafa 0 0) padding-box,
+        linear-gradient(to right, #badcff, #4da9ff) border-box;
+    color: #0a0a0a;
+    padding: 14.5px;
+    border: 3px solid transparent;
+    border-radius: 2rem;
+    display: inline-block;
+    margin: 0 5px;
 }
 
 /* Light Yellix */
 .font-yellix-light {
-     font-family: 'Yellix', sans-serif;
-     font-weight: 300;
+    font-family: 'Yellix', sans-serif;
+    font-weight: 300;
 }
 
 /* Semi Yellix */
 .font-yellix-semi {
-     font-family: 'Yellix', sans-serif;
-     font-weight: 500;
-     line-height: 1.25;
+    font-family: 'Yellix', sans-serif;
+    font-weight: 500;
+    line-height: 1.25;
 }
 
 /* Semi Yellix 2 */
 .font-yellix-semi2 {
-     font-family: 'Yellix', sans-serif;
-     font-weight: 600;
-     line-height: 1.25;
+    font-family: 'Yellix', sans-serif;
+    font-weight: 600;
+    line-height: 1.25;
 }
 
 /* Bold Yellix */
 .font-yellix-bold {
-     font-family: 'Yellix', sans-serif;
-     font-weight: bold;
+    font-family: 'Yellix', sans-serif;
+    font-weight: bold;
 }
 
 /* Extra Bold Yellix */
 .font-yellix-extra {
-     font-family: 'Yellix', sans-serif;
-     font-weight: 900;
-     font-style: normal;
+    font-family: 'Yellix', sans-serif;
+    font-weight: 750;
+    font-style: normal;
 }
 
 /* Light Italic Yellix */
 .font-yellix-italight {
-     font-family: 'Yellix', sans-serif;
-     font-weight: 300;
-     font-style: italic;
+    font-family: 'Yellix', sans-serif;
+    font-weight: 300;
+    font-style: italic;
 }
 
 
-.wa, .tg {
-     border: #9c9c9e 2px solid;
-     width: fit-content;
+.wa,
+.tg {
+    border: #9c9c9e 2px solid;
+    width: fit-content;
 
 }
+
+.signup {
+    background-image: url(./assets/images/metallic_blue_spikes_bg.png);
+}
+
+/* Spin the Florence Logo */
+@keyframes floLogo {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.floLogo {
+    animation: floLogo 1.5s ease-in-out infinite;
+    animation-delay: 1.25s;
+    animation-direction: normal;
+}
+
+/* accessibility: user preferences pause animation
+@media (prefers-reduced-motion: reduce) {
+    .floLogo {
+        animation: none;
+    }
+} */
