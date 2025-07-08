@@ -19,7 +19,7 @@ const Home = () => {
                     isConversationPage={false}
                 />
             </div>
-            <div className="isConvo">
+            <div className="isConvo hidden">
                 <Header
                     isHomePage={false}
                     isConversationPage={true}

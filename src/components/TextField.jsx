@@ -26,7 +26,7 @@ const TextField = ({ width, onSubmit, isConversationPage = false }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className={`flex bg-floWhite flex-row ${width ? `w-${width}` : 'w-full'} px-5 h-7 lg:h-[84px] border-floAsh border-[1px] my-6 md:my-4 border-floAsh border-solid rounded-full justify-between items-center w-full`}>
+        <form onSubmit={handleSubmit} className={`flex bg-floWhite flex-row ${'md' + (width ? `w-${width}` : 'w-full')} mx-auto px-5 h-7 lg:h-[84px] border-floAsh border-[1px] my-6 md:my-4 border-floAsh border-solid rounded-full justify-between items-center w-full`}>
             <button type="button" className='file-upload'>
                 <img src={plusIcon} alt="add" className="w-2 md:w-3 h-2 md:h-3 m-1" />
             </button>

@@ -11,7 +11,8 @@ const Homepage = () => {
             <h2 className="text-lg md:text-[30px] lg:text-xl text-floAsh font-yellix-semi2">Your intelligent academic companion</h2>
 
             <div className='w-[90%] py-3'>
-                <TextField />
+                <TextField
+                    width={'xlrg'} />
             </div>
 
             <Bots />
