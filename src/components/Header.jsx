@@ -26,15 +26,14 @@ const Header = ({
     numTokens,
     isHomePage,
     isConversationPage,
+    isLanding
 }) => {
     return (
-        <nav className="flex flex-row w-full my-2 h-6 px-1/10 py-6 justify-between items-center">
-            <Link to="/signup" className="ml-2 w-auto h-auto">
+        <nav className="flex flex-row w-full my-3 h-6 px-[2rem] sm:px-[5rem] py-6 justify-between items-center">
+            <Link to="/" className="ml-2 w-auto h-auto">
                 <img src={floLogo} alt="Flo*" className={`w-auto h-auto ${isHomePage ? "floLogo" : ""} ${isConversationPage ? "hidden" : ""}`} />
             </Link>
-            <Link to="/" className='ml-2 w-auto'>
-            </Link>
-            <ul className="flex mx-1 gap-1 text-sm md:text-base my-1">
+            <ul className={`flex mx-1 gap-1 text-sm md:text-base my-1 ${isLanding ? "hidden" : ""}`}>
                 <li>
                     <ContactModal />
                 </li>
@@ -54,6 +53,7 @@ Header.propTypes = {
     numTokens: PropTypes.number.isRequired,
     isHomePage: PropTypes.bool.isRequired,
     isConversationPage: PropTypes.bool.isRequired,
+    isLanding: PropTypes.bool
 };
 
 export default Header;

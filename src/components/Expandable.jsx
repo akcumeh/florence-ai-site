@@ -16,7 +16,7 @@ const Expandable = ({
     };
 
     return (
-        <div className={`w-full rounded-[36px] border border-floAsh border-[2px] border-opacity-50 transition-all duration-250 ${isOpen ? 'bg-floWhite' : 'bg-transparent'}`}>
+        <div className={`w-[90%] md:w-full mx-auto rounded-[36px] border border-floAsh border-[2px] border-opacity-50 transition-all duration-500 ${isOpen ? 'bg-floWhite' : 'bg-transparent'}`}>
             <div
                 className="flex items-center text-left justify-between px-4 py-2 cursor-pointer"
                 onClick={expand}

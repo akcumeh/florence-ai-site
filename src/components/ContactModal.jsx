@@ -37,9 +37,9 @@ const ContactModal = () => {
                                 <div className="flex flex-col gap-1">
                                     <div className="flex flex-wrap">
                                         <span className="text-md font-yellix-semi text-floBlack whitespace-nowrap">
-                                            Opeyemi Muyiwa-Dada -
+                                            Opeyemi Muyiwa-Dada -&nbsp;&nbsp;
                                         </span>
-                                        <span className="text-floAsh font-yellix-italight text-[13px]"> I founded & designed everything</span>
+                                        <span className="text-floAsh font-yellix-italight text-[13px]">I founded & designed everything</span>
                                     </div>
                                     <ul className="flex flex-row gap-1">
                                         <li><a className="text-floBlue text-sm hover:text-floAsh" href="tel:+2348143770724">Call</a></li>
@@ -54,9 +54,9 @@ const ContactModal = () => {
                                 <div className="flex flex-col gap-1">
                                     <div className="flex flex-wrap items-center">
                                         <span className="text-md font-yellix-semi text-floBlack whitespace-nowrap leading-none">
-                                            Angel Umeh -
+                                            Angel Umeh -&nbsp;&nbsp;
                                         </span>
-                                        <span className="text-floAsh font-yellix-italight text-[13px] leading-none"> I brought the designs to life</span>
+                                        <span className="text-floAsh font-yellix-italight text-[13px] leading-none">I brought the designs to life</span>
                                     </div>
                                     <ul className="flex flex-row gap-1">
                                         <li><a className="text-floBlue text-sm hover:text-floAsh" href="tel:+2348164975875">Call</a></li>

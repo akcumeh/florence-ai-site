@@ -26,8 +26,8 @@ const TextField = ({ width, onSubmit, isConversationPage = false }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className={`flex bg-floWhite flex-row ${'md' + (width ? `w-${width}` : 'w-full')} mx-auto px-5 h-7 lg:h-[84px] border-floAsh border-[1px] my-6 md:my-4 border-floAsh border-solid rounded-full justify-between items-center w-full`}>
-            <button type="button" className='file-upload'>
+        <form onSubmit={handleSubmit} className={`flex bg-floWhite flex-row ${width ? `w-${width}` : 'w-full'} mx-auto h-7 lg:h-[84px] border-floAsh border-[1px] my-6 md:my-4 border-floAsh border-solid rounded-full justify-between md:justify-center items-center px-3 md:px-0 md:gap-5`}>
+            <button type="button" className='file-upload border-none bg-transparent w-4 md:w-5 h-4 md:h-5 flex items-center'>
                 <img src={plusIcon} alt="add" className="w-2 md:w-3 h-2 md:h-3 m-1" />
             </button>
             <input
@@ -37,8 +37,8 @@ const TextField = ({ width, onSubmit, isConversationPage = false }) => {
                 placeholder="What can I help you with today?"
                 className="w-xlrg py-4 h-full border-none focus:outline-none bg-floWhite placeholder-floAsh font-yellix text-sm md:text-base"
             />
-            <button type="submit">
-                <img src={aiIcon} alt="Submit" className="w-2 md:w-5 h-2 md:h-5 bg-floWhite" />
+            <button type="submit" className='w-4 md:w-5 h-4 md:h-5'>
+                <img src={aiIcon} alt="Submit" className="w-4 md:w-5 h-4 md:h-5 bg-floWhite" />
             </button>
         </form>
     );
