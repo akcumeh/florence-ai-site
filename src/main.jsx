@@ -2,15 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
-// import { ChatProvider } from './services/ChatContext'
+import { ThemeProvider } from './contexts/ThemeContext'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        {/* <ChatProvider> */}
+        <ThemeProvider>
             <BrowserRouter>
                 <App />
             </BrowserRouter>
-        {/* </ChatProvider> */}
+        </ThemeProvider>
     </React.StrictMode>,
 );

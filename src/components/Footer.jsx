@@ -7,8 +7,7 @@ const Footer = ({
     return (
         <>
             <footer className={`${!isHomepage ? "hidden" : ""} text-sm my-2 text-floAsh`}>
-                Get the most out of Florence<span className="text-floBlue">*</span> - try our <a href="https://wa.me/12164935624/" className="text-waGreen ">WhatsApp</a> and <a href="https://t.me/FlorenceAIBot" className="text-tgBlue ">Telegram</a> bots for enhanced capabilities.
-
+                Get the most out of Florence<span className="text-floBlue">*</span> - try our <a href="https://t.me/FlorenceAIBot" className="text-tgBlue md">Telegram</a> bot for enhanced capabilities.
             </footer>
 
             {/* if footer is convo page */}
