@@ -2,6 +2,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import floLogo from '../assets/images/logo_blue.png';
 import floGradient from '../assets/images/flo_gradient.png';
 import FAQLink from '../components/FAQLink';
+import ProductHuntWidget from '../components/ProductHuntWidget';
 import Bots from '../components/Bots';
 import ContactModal from '../components/ContactModal';
 
@@ -30,6 +31,7 @@ const Landing = () => {
 
             <div className="w-full">
                 <FAQLink />
+                <ProductHuntWidget />
             </div>
 
             {/* Main Content */}
