@@ -35,6 +35,7 @@ $themes: (
 
     @if $name == dark {
         --color-card-bg: #141414;
+        --color-footer-muted: rgba(var(--text-rgb), 0.7);
         --btn-solid-bg: #{$white};
         --btn-solid-fg: #{$ink};
         --btn-ghost-bg: rgba(255, 255, 255, 0.102);
@@ -43,6 +44,7 @@ $themes: (
         color-scheme: dark;
     } @else {
         --color-card-bg: #{$white};
+        --color-footer-muted: rgb(var(--text-rgb));
         --btn-solid-bg: rgb(var(--text-rgb));
         --btn-solid-fg: #{$white};
         --btn-ghost-bg: transparent;
