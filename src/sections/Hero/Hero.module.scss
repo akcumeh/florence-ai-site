@@ -1,0 +1,152 @@
+.wrap {
+    padding: 12px;
+    background: var(--color-hero-wrap);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    overflow: clip;
+    padding: 18px 20px 0;
+    border-radius: 20px;
+    background: var(--hero-bg) center / cover no-repeat;
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+}
+
+.logo {
+    flex: none;
+    display: block;
+    border-radius: 4px;
+
+    img {
+        width: 74px;
+        height: auto;
+    }
+
+    &:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 4px;
+    }
+}
+
+.nav {
+    display: none;
+}
+
+.navList {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navLink {
+    color: #fff;
+    font-family: 'Yellix', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.action {
+    min-height: 44px;
+    padding: 0 12px;
+    border-radius: 11px;
+    font-family: 'Yellix', sans-serif;
+    font-size: 14px;
+}
+
+.toggle {
+    width: 44px;
+    height: 44px;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: clamp(64px, 20vw, 120px);
+    text-align: center;
+}
+
+.title {
+    color: #fff;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 500;
+    font-size: min(44px, calc((100vw - 64px) / 11.2));
+    line-height: 1.15;
+
+    span {
+        display: block;
+        white-space: nowrap;
+    }
+}
+
+.form {
+    margin-top: 24px;
+}
+
+.caption {
+    max-width: 300px;
+    margin-top: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Figtree', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.35;
+}
+
+.folders {
+    flex: none;
+    width: 150%;
+    max-width: none;
+    height: auto;
+    margin-top: 36px;
+    margin-bottom: -6%;
+    pointer-events: none;
+    user-select: none;
+}
+
+@media (max-width: 374px) {
+    .card {
+        padding-inline: 14px;
+    }
+
+    .logo img {
+        width: 64px;
+    }
+
+    .actions {
+        gap: 4px;
+    }
+
+    .action {
+        padding: 0 9px;
+        font-size: 13px;
+    }
+
+    .toggle {
+        width: 40px;
+        height: 40px;
+    }
+}

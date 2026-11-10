@@ -1,7 +1,10 @@
+import Hero from '../sections/Hero/Hero';
+
 const Home = () => (
-    <main>
-        <h1>Understand your course. Master your exams.</h1>
-    </main>
+    <>
+        <Hero />
+        <main id="main" />
+    </>
 );
 
 export default Home;

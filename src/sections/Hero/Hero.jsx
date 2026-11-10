@@ -1,0 +1,60 @@
+import wordmark from '../../assets/brand/wordmark-hero.svg';
+import folders from '../../assets/images/folder-cluster.png';
+import Button from '../../components/Button/Button';
+import ThemeToggle from '../../components/ThemeToggle/ThemeToggle';
+import AskForm from '../../components/AskForm/AskForm';
+import { links, navItems } from '../../content/links';
+import styles from './Hero.module.scss';
+
+const Hero = ({ onAsk }) => (
+    <header className={styles.wrap}>
+        <div className={styles.card}>
+            <div className={styles.bar}>
+                <a href="/" className={styles.logo}>
+                    <img src={wordmark} alt="Florence" width="105.5" height="30" />
+                </a>
+
+                <nav aria-label="Main" className={styles.nav}>
+                    <ul className={styles.navList}>
+                        {navItems.map((item) => (
+                            <li key={item.href}>
+                                <a href={item.href} className={styles.navLink}>
+                                    {item.label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+
+                <div className={styles.actions}>
+                    <Button variant="white" href={links.whatsapp} className={styles.action}>
+                        Whatsapp
+                    </Button>
+                    <Button variant="glass" href={links.telegram} className={styles.action}>
+                        Telegram
+                    </Button>
+                    <ThemeToggle className={styles.toggle} />
+                </div>
+            </div>
+
+            <div className={styles.body}>
+                <h1 className={styles.title}>
+                    <span>Understand your course.</span> <span>Master your exams.</span>
+                </h1>
+                <AskForm onAsk={onAsk} className={styles.form} />
+                <p className={styles.caption}>Ask questions here, or get answers on WhatsApp and Telegram</p>
+            </div>
+
+            <img
+                className={styles.folders}
+                src={folders}
+                alt=""
+                width="1383"
+                height="461"
+                fetchPriority="high"
+            />
+        </div>
+    </header>
+);
+
+export default Hero;
