@@ -3,7 +3,7 @@ import folders from '../../assets/images/folder-cluster.png';
 import Button from '../../components/Button/Button';
 import ThemeToggle from '../../components/ThemeToggle/ThemeToggle';
 import AskForm from '../../components/AskForm/AskForm';
-import { links, navItems } from '../../content/links';
+import { ASK_INPUT_ID, links, navItems } from '../../content/links';
 import styles from './Hero.module.scss';
 
 const Hero = ({ onAsk }) => (
@@ -41,7 +41,7 @@ const Hero = ({ onAsk }) => (
                 <h1 className={styles.title}>
                     <span>Understand your course.</span> <span>Master your exams.</span>
                 </h1>
-                <AskForm onAsk={onAsk} className={styles.form} />
+                <AskForm onAsk={onAsk} id={ASK_INPUT_ID} className={styles.form} />
                 <p className={styles.caption}>Ask questions here, or get answers on WhatsApp and Telegram</p>
             </div>
 

@@ -1,0 +1,50 @@
+.steps {
+    --icon-scale: 0.75;
+
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    margin: 40px auto 0;
+    padding: 0;
+    list-style: none;
+}
+
+.step {
+    padding: 28px 0;
+
+    & + & {
+        border-top: 0.5px solid var(--color-divider);
+    }
+
+    &:first-child {
+        padding-top: 0;
+    }
+}
+
+.icon {
+    color: var(--color-text);
+}
+
+.title {
+    display: flex;
+    gap: 7px;
+    margin-top: 20px;
+    color: var(--color-text);
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.number {
+    flex: none;
+}
+
+.description {
+    margin-top: 10px;
+    color: var(--color-text-muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+}

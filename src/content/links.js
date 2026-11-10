@@ -3,6 +3,8 @@ export const links = {
     whatsapp: '',
 };
 
+export const ASK_INPUT_ID = 'ask-question';
+
 export const sectionIds = {
     howItWorks: 'how-it-works',
     ask: 'ask',

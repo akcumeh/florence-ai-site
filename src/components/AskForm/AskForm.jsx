@@ -1,9 +1,10 @@
 import { useId, useState } from 'react';
 import styles from './AskForm.module.scss';
 
-const AskForm = ({ onAsk, className = '' }) => {
+const AskForm = ({ onAsk, id, className = '' }) => {
     const [question, setQuestion] = useState('');
-    const inputId = useId();
+    const generatedId = useId();
+    const inputId = id ?? generatedId;
 
     const handleSubmit = (e) => {
         e.preventDefault();

@@ -1,0 +1,12 @@
+.section {
+    padding: 72px 20px;
+    background: var(--color-page);
+    color: var(--color-text);
+    scroll-margin-top: 12px;
+}
+
+.section-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
