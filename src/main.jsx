@@ -7,12 +7,15 @@ import '@fontsource/figtree/400.css';
 import '@fontsource/figtree/500.css';
 import '@fontsource/figtree/600.css';
 import './styles/main.scss';
+import { ThemeProvider } from './theme/ThemeProvider';
 import App from './App.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
+        <ThemeProvider>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </ThemeProvider>
     </React.StrictMode>,
 );

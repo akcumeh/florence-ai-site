@@ -1,11 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="afternoon">
 
 <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/src/assets/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
     <title>Florence* AI</title>
+    <script>
+        (function () {
+            var scheme, contrast;
+            try {
+                scheme = localStorage.getItem('flo-scheme');
+                contrast = localStorage.getItem('flo-contrast');
+            } catch (e) {}
+            var mq = function (q) { return window.matchMedia && window.matchMedia(q).matches; };
+            if (scheme !== 'light' && scheme !== 'dark') scheme = mq('(prefers-color-scheme: dark)') ? 'dark' : 'light';
+            contrast = contrast === 'true' || (contrast !== 'false' && mq('(prefers-contrast: more)'));
+            document.documentElement.dataset.theme = scheme === 'dark' ? 'dark' : contrast ? 'contrast' : 'afternoon';
+        })();
+    </script>
 </head>
 
 <body>

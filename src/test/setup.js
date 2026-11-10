@@ -5,9 +5,10 @@ import { cleanup } from '@testing-library/react';
 afterEach(() => {
     cleanup();
     localStorage.clear();
+    window.__mediaMatches = {};
+    delete document.documentElement.dataset.theme;
 });
 
-// jsdom has no matchMedia. Tests override `matches` per query via window.__mediaMatches.
 window.__mediaMatches = {};
 window.matchMedia = vi.fn((query) => ({
     matches: Boolean(window.__mediaMatches[query]),
