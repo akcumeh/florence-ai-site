@@ -1,19 +1,14 @@
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
 import Home from './pages/Home';
-import FAQ from './pages/FAQ';
-import Error from './pages/Error';
-import Landing from './pages/Landing';
+import NotFound from './pages/NotFound';
 
 function App() {
     return (
         <Routes>
-            <Route index element={<Landing />} />
-            <Route path="home" element={<Home />} />
-            <Route path="faq" element={<FAQ />} />
-            <Route path="*" element={<Error />} />
+            <Route index element={<Home />} />
+            <Route path="*" element={<NotFound />} />
         </Routes>
     );
-};
+}
 
 export default App;

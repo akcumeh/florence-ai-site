@@ -1,0 +1,51 @@
+// Theme tokens arrive in Stage B; these literals match the old 404 until then.
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    font-family: 'Figtree', sans-serif;
+    background: #fafafa;
+    color: #0a0a0a;
+}
+
+.brand {
+    font-weight: 500;
+}
+
+.star {
+    color: #017ffd;
+}
+
+.code {
+    font-size: clamp(80px, 25vw, 160px);
+    font-weight: 600;
+    line-height: 1;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.body {
+    max-width: 480px;
+    font-size: 16px;
+    color: rgba(10, 10, 10, 0.7);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 28px;
+    border-radius: 14px;
+    background: #017ffd;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+}

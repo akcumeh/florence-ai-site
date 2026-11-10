@@ -1,0 +1,20 @@
+// Inter and Figtree are self-hosted through @fontsource (imported in main.jsx).
+// Yellix is a commercial face shipped in src/assets; only the two weights the design uses are loaded.
+
+@font-face {
+    font-family: 'Yellix';
+    src: url('../assets/fonts/font_yellix/Yellix-Regular.woff2') format('woff2'),
+        url('../assets/fonts/font_yellix/Yellix-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Yellix';
+    src: url('../assets/fonts/font_yellix/Yellix-Medium.woff2') format('woff2'),
+        url('../assets/fonts/font_yellix/Yellix-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
