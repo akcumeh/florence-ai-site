@@ -1,3 +1,5 @@
+@use '../../styles/tools' as *;
+
 .footer {
     padding: 32px 12px 40px;
     background: var(--color-page);
@@ -106,4 +108,84 @@
 .legalLink {
     color: inherit;
     text-decoration: none;
+}
+
+@include desktop {
+    .footer {
+        padding: u(60.5) u(79) u(135);
+    }
+
+    .grid {
+        grid-template-columns: u(546) u(476) u(478) auto;
+        gap: 0;
+        height: u(265);
+        max-width: none;
+        padding: 0 0 0 u(70);
+    }
+
+    .wordmark {
+        width: u(154.73);
+        height: u(44);
+    }
+
+    .tagline {
+        margin-top: u(57);
+        font-size: u(25);
+        line-height: u(35);
+    }
+
+    .person,
+    .nav {
+        padding-top: u(9);
+    }
+
+    .name,
+    .role {
+        font-size: u(25);
+        line-height: u(30);
+    }
+
+    .role {
+        margin-top: u(10);
+    }
+
+    .contacts {
+        flex-direction: column;
+        gap: u(10);
+        margin-top: u(25);
+    }
+
+    .navList {
+        gap: u(10);
+    }
+
+    .link,
+    .navLink {
+        min-height: 0;
+        font-size: u(25);
+        line-height: u(30);
+    }
+
+    .contrast {
+        min-height: 0;
+        gap: u(12);
+        margin-top: u(16);
+        font-size: u(22);
+    }
+
+    .legal {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: u(84);
+        max-width: none;
+        margin-top: 0;
+        padding: 0 u(51) 0 u(52);
+        border-radius: u(50);
+        font-size: u(22);
+    }
+
+    .legalLinks {
+        gap: u(45);
+    }
 }

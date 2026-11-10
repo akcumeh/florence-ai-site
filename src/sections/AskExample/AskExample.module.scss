@@ -1,3 +1,5 @@
+@use '../../styles/tools' as *;
+
 .card {
     display: flex;
     flex-direction: column;
@@ -68,4 +70,57 @@
     font-size: 13px;
     font-weight: 500;
     line-height: 1.3;
+}
+
+@include desktop {
+    .root {
+        padding-bottom: u(148);
+        --action-gap: #{u(64)};
+    }
+
+    .card {
+        width: u(1100);
+        max-width: none;
+        margin-top: u(113);
+        gap: u(32);
+        padding: u(56);
+        border-width: u(2);
+        border-radius: u(25);
+    }
+
+    .label {
+        font-size: u(18);
+        line-height: u(22);
+        letter-spacing: u(2.16);
+    }
+
+    .question {
+        max-width: none;
+        padding: u(20) u(28);
+        border-radius: u(25);
+        font-size: u(26);
+        line-height: u(31);
+        white-space: nowrap;
+    }
+
+    .answer {
+        gap: u(16);
+    }
+
+    .author {
+        font-size: u(24);
+        line-height: u(29);
+    }
+
+    .line {
+        font-size: u(24);
+        line-height: u(35);
+    }
+
+    .chip {
+        padding: u(10) u(20);
+        border-width: u(2);
+        font-size: u(20);
+        line-height: u(24);
+    }
 }

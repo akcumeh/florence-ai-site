@@ -1,5 +1,7 @@
+@use '../../styles/tools' as *;
+
 .steps {
-    --icon-scale: 0.75;
+    --icon-unit: 0.75px;
 
     display: flex;
     flex-direction: column;
@@ -47,4 +49,58 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 1.4;
+}
+
+@include desktop {
+    .root {
+        padding-bottom: u(150);
+        --action-gap: #{u(73)};
+    }
+
+    .steps {
+        --icon-unit: var(--u);
+
+        display: grid;
+        grid-template-columns: u(586) u(634) u(554);
+        max-width: none;
+        margin: u(113) 0 0 u(137);
+    }
+
+    .step {
+        height: u(316);
+        padding: u(11) 0 0;
+
+        & + & {
+            padding-left: u(78);
+            border-top: 0;
+            border-left: 0.5px solid var(--color-divider);
+        }
+
+        &:first-child {
+            padding-top: u(11);
+        }
+    }
+
+    .iconSlot {
+        height: u(82);
+    }
+
+    .title {
+        gap: u(7);
+        margin-top: 0;
+        font-size: u(27);
+        line-height: u(33);
+        white-space: nowrap;
+    }
+
+    .description {
+        margin-top: u(18);
+        font-size: u(23);
+        line-height: u(28);
+        white-space: nowrap;
+
+        span {
+            display: block;
+        }
+    }
 }

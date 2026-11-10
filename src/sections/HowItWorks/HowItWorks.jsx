@@ -12,25 +12,34 @@ const steps = [
     {
         icon: docIcon,
         size: [40, 51],
+        offset: [-2, -2],
         title: 'Upload your material',
         lines: ['Add your course PDF or exam notes.'],
     },
     {
         icon: gridIcon,
         size: [44, 48],
+        offset: [0, 0],
         title: 'Get questions to practise',
         lines: ['Florence turns the material into focused', 'exam questions.'],
     },
     {
         icon: bubbleIcon,
         size: [43, 45],
+        offset: [0, 3],
         title: 'See the answers clearly',
         lines: ['Check your answers, then understand why.'],
     },
 ];
 
+const scaled = (n) => `calc(${n} * var(--icon-unit))`;
+
 const HowItWorks = () => (
-    <section id={sectionIds.howItWorks} className="section" aria-labelledby="how-it-works-title">
+    <section
+        id={sectionIds.howItWorks}
+        className={`section ${styles.root}`}
+        aria-labelledby="how-it-works-title"
+    >
         <SectionHeader
             titleId="how-it-works-title"
             eyebrow="How it works"
@@ -41,12 +50,17 @@ const HowItWorks = () => (
         <ol className={styles.steps}>
             {steps.map((step, i) => (
                 <li key={step.title} className={styles.step}>
-                    <MaskIcon
-                        src={step.icon}
-                        width={`calc(${step.size[0]}px * var(--icon-scale))`}
-                        height={`calc(${step.size[1]}px * var(--icon-scale))`}
-                        className={styles.icon}
-                    />
+                    <div className={styles.iconSlot}>
+                        <MaskIcon
+                            src={step.icon}
+                            width={scaled(step.size[0])}
+                            height={scaled(step.size[1])}
+                            className={styles.icon}
+                            style={{
+                                transform: `translate(${scaled(step.offset[0])}, ${scaled(step.offset[1])})`,
+                            }}
+                        />
+                    </div>
                     <h3 className={styles.title}>
                         <span className={styles.number}>{i + 1}.</span>
                         {step.title}

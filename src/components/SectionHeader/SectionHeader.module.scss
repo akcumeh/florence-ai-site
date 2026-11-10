@@ -1,3 +1,5 @@
+@use '../../styles/tools' as *;
+
 .header {
     display: flex;
     flex-direction: column;
@@ -40,4 +42,26 @@
     font-weight: 400;
     line-height: 1.4;
     text-wrap: balance;
+}
+
+@include desktop {
+    .eyebrow {
+        font-size: u(25);
+        line-height: u(30);
+    }
+
+    .title {
+        margin-top: var(--hdr-gap-1, #{u(10)});
+        font-size: u(75);
+        line-height: u(91);
+        white-space: nowrap;
+    }
+
+    .subtitle {
+        max-width: none;
+        margin-top: var(--hdr-gap-2, #{u(20)});
+        font-size: u(25);
+        line-height: u(30);
+        white-space: nowrap;
+    }
 }

@@ -1,3 +1,5 @@
+@use '../../styles/tools' as *;
+
 .section {
     padding: 72px 20px 0;
     background: var(--color-page);
@@ -35,5 +37,38 @@
 
     span {
         display: block;
+    }
+}
+
+@include desktop {
+    .section {
+        padding: u(238) u(149) 0;
+    }
+
+    .inner {
+        display: grid;
+        grid-template-columns: u(1338) auto;
+        gap: 0;
+        max-width: none;
+        padding-bottom: u(36);
+    }
+
+    .eyebrow {
+        font-size: u(25);
+        line-height: u(30);
+    }
+
+    .title {
+        margin-top: u(18);
+        font-size: u(47);
+        line-height: u(57);
+        white-space: nowrap;
+    }
+
+    .aside {
+        margin-top: u(27.5);
+        font-size: u(25);
+        line-height: u(35);
+        white-space: nowrap;
     }
 }

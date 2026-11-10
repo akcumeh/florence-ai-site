@@ -1,3 +1,5 @@
+@use '../../styles/tools' as *;
+
 .list {
     --faq-icon: 20px;
 
@@ -65,4 +67,50 @@
     color: var(--color-text-muted);
     font-family: 'Inter', sans-serif;
     font-size: 16px;
+}
+
+@include desktop {
+    .root {
+        padding-top: u(111);
+        padding-bottom: u(117);
+        --hdr-gap-1: #{u(25)};
+        --hdr-gap-2: #{u(25)};
+    }
+
+    .list {
+        --faq-icon: #{u(25)};
+
+        width: u(1252);
+        max-width: none;
+        margin-top: u(64);
+    }
+
+    .trigger {
+        min-height: 0;
+        padding: u(34) u(20) calc(#{u(36)} - 0.5px) u(19);
+        font-size: u(35);
+        line-height: u(42);
+    }
+
+    .panel,
+    .row:first-child .panel {
+        margin-top: u(-11);
+        padding: 0 0 calc(#{u(46)} - 0.5px) u(19);
+        font-size: u(25);
+        line-height: u(30);
+
+        p {
+            max-width: u(1149);
+        }
+    }
+
+    .more {
+        gap: u(30);
+        margin-top: u(146);
+    }
+
+    .moreText {
+        font-size: u(25);
+        line-height: u(30);
+    }
 }

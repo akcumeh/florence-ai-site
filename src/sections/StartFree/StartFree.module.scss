@@ -1,3 +1,5 @@
+@use '../../styles/tools' as *;
+
 .section {
     padding: 8px 20px;
     background: var(--color-page);
@@ -49,4 +51,43 @@
     box-shadow: none;
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
+}
+
+@include desktop {
+    .section {
+        padding: u(80) u(149);
+    }
+
+    .card {
+        max-width: none;
+        gap: u(28);
+        padding: u(96);
+        border-radius: u(25);
+    }
+
+    .title {
+        font-size: u(75);
+        line-height: u(90);
+    }
+
+    .text {
+        width: u(900);
+        max-width: none;
+        font-size: u(30);
+        line-height: u(36);
+    }
+
+    .buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: u(20);
+        width: auto;
+        margin-top: 0;
+    }
+
+    .button {
+        width: auto;
+        min-height: u(61);
+        border-radius: u(14);
+    }
 }

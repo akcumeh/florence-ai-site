@@ -1,3 +1,5 @@
+@use 'tools' as *;
+
 .section {
     padding: 72px 20px;
     background: var(--color-page);
@@ -8,5 +10,25 @@
 .section-action {
     display: flex;
     justify-content: center;
-    margin-top: 32px;
+    margin-top: var(--action-gap, 32px);
+}
+
+@include desktop {
+    :root {
+        --u: calc(100vw / 2048);
+    }
+
+    @supports (width: 1cqw) {
+        #root {
+            container-type: inline-size;
+        }
+
+        :root {
+            --u: calc(100cqw / 2048);
+        }
+    }
+
+    .section {
+        padding: u(137) 0 0;
+    }
 }

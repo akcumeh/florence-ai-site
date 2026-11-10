@@ -6,7 +6,7 @@ const Proof = ({ items = testimonials }) => {
     if (!items.length) return null;
 
     return (
-        <section className="section" aria-labelledby="proof-title">
+        <section className={`section ${styles.root}`} aria-labelledby="proof-title">
             <SectionHeader
                 titleId="proof-title"
                 titleFont="figtree"

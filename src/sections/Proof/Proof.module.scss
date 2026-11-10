@@ -1,3 +1,5 @@
+@use '../../styles/tools' as *;
+
 .cards {
     display: grid;
     gap: 16px;
@@ -30,4 +32,32 @@
     color: var(--color-card-label);
     font-size: 15px;
     white-space: pre;
+}
+
+@include desktop {
+    .root {
+        padding-bottom: u(150);
+    }
+
+    .cards {
+        grid-template-columns: repeat(3, u(562));
+        gap: u(32);
+        max-width: none;
+        margin: u(96) 0 0 u(149);
+    }
+
+    .card {
+        gap: u(32);
+        padding: u(40);
+        border-width: u(2);
+        border-radius: u(25);
+    }
+
+    .quote {
+        font-size: u(28);
+    }
+
+    .attribution {
+        font-size: u(22);
+    }
 }

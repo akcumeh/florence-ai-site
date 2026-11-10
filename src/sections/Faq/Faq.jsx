@@ -16,7 +16,7 @@ const Faq = ({ items = defaultFaqs }) => {
     const toggle = (i) => setOpenIndex((current) => (current === i ? -1 : i));
 
     return (
-        <section id={sectionIds.faq} className="section" aria-labelledby="faq-title">
+        <section id={sectionIds.faq} className={`section ${styles.root}`} aria-labelledby="faq-title">
             <SectionHeader
                 titleId="faq-title"
                 eyebrow="FAQ"

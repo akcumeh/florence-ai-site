@@ -12,7 +12,7 @@ const answer = [
 ];
 
 const AskExample = () => (
-    <section id={sectionIds.ask} className="section" aria-labelledby="ask-title">
+    <section id={sectionIds.ask} className={`section ${styles.root}`} aria-labelledby="ask-title">
         <SectionHeader
             titleId="ask-title"
             titleFont="figtree"

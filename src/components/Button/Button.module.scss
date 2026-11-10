@@ -1,3 +1,5 @@
+@use '../../styles/tools' as *;
+
 .button {
     display: inline-flex;
     align-items: center;
@@ -75,5 +77,14 @@
 
     &:hover {
         opacity: 0.88;
+    }
+}
+
+@include desktop {
+    .button {
+        min-height: u(61);
+        padding: 0 u(36);
+        border-radius: u(14);
+        font-size: u(23);
     }
 }

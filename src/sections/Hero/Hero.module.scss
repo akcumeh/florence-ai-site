@@ -1,3 +1,5 @@
+@use '../../styles/tools' as *;
+
 .wrap {
     padding: 12px;
     background: var(--color-hero-wrap);
@@ -148,5 +150,105 @@
     .toggle {
         width: 40px;
         height: 40px;
+    }
+}
+
+@include desktop {
+    .wrap {
+        padding: u(64) u(71.7) u(63) u(72);
+    }
+
+    .card {
+        display: flow-root;
+        height: u(1259);
+        padding: 0;
+        border-radius: u(25);
+    }
+
+    .bar {
+        position: absolute;
+        top: u(53.93);
+        left: u(133.9);
+        right: u(81.83);
+        height: u(61.369);
+        width: auto;
+        gap: 0;
+    }
+
+    .logo img {
+        width: u(105.5);
+    }
+
+    .nav {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: u(634.1);
+        transform: translateY(-50%);
+    }
+
+    .navList {
+        display: grid;
+        grid-template-columns: u(170) u(80) auto;
+    }
+
+    .navLink {
+        display: block;
+        font-size: u(23.246);
+        line-height: u(17.295);
+    }
+
+    .actions {
+        gap: u(15.81);
+    }
+
+    .action {
+        width: u(169.23);
+        height: u(61.369);
+        min-height: 0;
+        padding: 0;
+        border-radius: u(13.948);
+        font-size: u(23.246);
+    }
+
+    .toggle {
+        width: u(61.369);
+        height: u(61.369);
+        border-radius: u(13.948);
+
+        svg {
+            width: u(26);
+            height: u(26);
+        }
+    }
+
+    .body {
+        margin-top: u(438.88);
+    }
+
+    .title {
+        font-size: u(92.984);
+        line-height: u(106.931);
+    }
+
+    .form {
+        margin-top: u(48.36);
+    }
+
+    .caption {
+        max-width: none;
+        margin-top: u(42.36);
+        font-size: u(24);
+        line-height: u(29);
+        white-space: nowrap;
+    }
+
+    .folders {
+        position: absolute;
+        top: u(853);
+        left: 50%;
+        width: u(1383);
+        margin: 0;
+        transform: translateX(-50%);
     }
 }
