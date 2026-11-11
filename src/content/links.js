@@ -1,6 +1,7 @@
 export const links = {
     telegram: 'https://t.me/FlorenceAIBot',
-    whatsapp: '',
+    whatsapp: 'https://wa.me/message/PVXH2K3TDYTGP1',
+    whatsappPrep: 'https://wa.me/message/SR25SMDIVBKQD1',
 };
 
 export const ASK_INPUT_ID = 'ask-question';

@@ -26,6 +26,13 @@ describe('Hero', () => {
         expect(tg).toHaveAttribute('rel', 'noopener noreferrer');
     });
 
+    it('opens the general WhatsApp chat from the navbar', () => {
+        renderWithProviders(<Hero />);
+        const wa = screen.getByRole('link', { name: 'Whatsapp' });
+        expect(wa).toHaveAttribute('href', 'https://wa.me/message/PVXH2K3TDYTGP1');
+        expect(wa).toHaveAttribute('target', '_blank');
+    });
+
     it('renders the wordmark with alt text and the folders as decoration', () => {
         renderWithProviders(<Hero />);
         expect(screen.getByRole('img', { name: 'Florence' })).toBeInTheDocument();

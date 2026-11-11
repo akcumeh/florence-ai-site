@@ -61,7 +61,10 @@ describe('Start free', () => {
         renderWithProviders(<StartFree />);
         expect(screen.getByRole('heading', { name: 'Start free' })).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'Ask a question' })).toBeInTheDocument();
-        expect(screen.getByText('Continue on WhatsApp')).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: 'Continue on WhatsApp' })).toHaveAttribute(
+            'href',
+            'https://wa.me/message/PVXH2K3TDYTGP1',
+        );
         expect(screen.getByRole('link', { name: 'Continue on Telegram' })).toHaveAttribute(
             'href',
             'https://t.me/FlorenceAIBot',

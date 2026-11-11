@@ -1,5 +1,5 @@
 import wordmark from '../../assets/brand/wordmark-hero.svg';
-import folders from '../../assets/images/folder-cluster.png';
+import folders from '../../assets/images/folder-cluster.webp';
 import Button from '../../components/Button/Button';
 import ThemeToggle from '../../components/ThemeToggle/ThemeToggle';
 import AskForm from '../../components/AskForm/AskForm';

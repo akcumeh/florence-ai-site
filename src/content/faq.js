@@ -1,3 +1,5 @@
+import { links } from './links';
+
 export const faqs = [
     {
         question: 'What can I ask Florence?',
@@ -6,6 +8,7 @@ export const faqs = [
     {
         question: 'How does the prep feature work?',
         answer: 'Upload your course material and Florence turns it into focused exam questions. Answer them, then check the explanation to see why each answer is right.',
+        link: { label: 'Start prep on WhatsApp', href: links.whatsappPrep },
     },
     {
         question: 'Do I need to upload my notes first?',

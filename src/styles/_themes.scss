@@ -65,19 +65,19 @@ $themes: (
     --hero-glass-blur: 11.16px;
     --hero-placeholder: rgba(191, 191, 191, 0.87);
 
-    --hero-bg: url('../assets/images/hero-bg-afternoon.png');
+    --hero-bg: url('../assets/images/hero-bg-afternoon.webp');
 
     @include theme-vars(afternoon);
 }
 
 :root[data-theme='contrast'] {
-    --hero-bg: url('../assets/images/hero-bg-contrast.png');
+    --hero-bg: url('../assets/images/hero-bg-contrast.webp');
 
     @include theme-vars(contrast);
 }
 
 :root[data-theme='dark'] {
-    --hero-bg: url('../assets/images/hero-bg-dark.png');
+    --hero-bg: url('../assets/images/hero-bg-dark.webp');
 
     @include theme-vars(dark);
 }

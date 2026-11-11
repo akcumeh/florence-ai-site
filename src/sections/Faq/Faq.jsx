@@ -56,6 +56,16 @@ const Faq = ({ items = defaultFaqs }) => {
                                 hidden={!isOpen}
                             >
                                 <p>{item.answer}</p>
+                                {item.link && (
+                                    <a
+                                        className={styles.answerLink}
+                                        href={item.link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {item.link.label}
+                                    </a>
+                                )}
                             </div>
                         </div>
                     );

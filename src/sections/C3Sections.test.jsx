@@ -45,6 +45,16 @@ describe('FAQ accordion', () => {
         expect(panel).toHaveAttribute('aria-labelledby', btn.id);
     });
 
+    it('links the prep answer to the WhatsApp prep chat', async () => {
+        const user = userEvent.setup();
+        renderWithProviders(<Faq />);
+        await user.click(question('How does the prep feature work?'));
+        expect(screen.getByRole('link', { name: 'Start prep on WhatsApp' })).toHaveAttribute(
+            'href',
+            'https://wa.me/message/SR25SMDIVBKQD1',
+        );
+    });
+
     it('lists all seven questions', () => {
         renderWithProviders(<Faq />);
         expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(7);
