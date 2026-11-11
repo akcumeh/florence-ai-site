@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import { ThemeContext } from './ThemeContext';
 import {
     CONTRAST_KEY,
@@ -29,13 +29,20 @@ const hasStoredScheme = () => getStoredScheme() !== null;
 const hasStoredContrast = () => getStoredContrast() !== null;
 
 export function ThemeProvider({ children }) {
-    const [scheme, setScheme] = useState(getInitialScheme);
-    const [contrast, setContrastState] = useState(getInitialContrast);
+    const [scheme, setScheme] = useState('light');
+    const [contrast, setContrastState] = useState(false);
+    const [ready, setReady] = useState(false);
     const theme = resolveTheme({ scheme, contrast });
 
+    useLayoutEffect(() => {
+        setScheme(getInitialScheme());
+        setContrastState(getInitialContrast());
+        setReady(true);
+    }, []);
+
     useEffect(() => {
-        document.documentElement.dataset.theme = theme;
-    }, [theme]);
+        if (ready) document.documentElement.dataset.theme = theme;
+    }, [ready, theme]);
 
     const followDark = useCallback((matches) => setScheme(matches ? 'dark' : 'light'), []);
     useMediaFollow(DARK_QUERY, hasStoredScheme, followDark);

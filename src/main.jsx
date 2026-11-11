@@ -10,12 +10,21 @@ import './styles/main.scss';
 import { ThemeProvider } from './theme/ThemeProvider';
 import App from './App.jsx';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const container = document.getElementById('root');
+
+const app = (
     <React.StrictMode>
         <ThemeProvider>
             <BrowserRouter>
                 <App />
             </BrowserRouter>
         </ThemeProvider>
-    </React.StrictMode>,
+    </React.StrictMode>
 );
+
+if (container.hasChildNodes() && window.location.pathname === '/') {
+    ReactDOM.hydrateRoot(container, app);
+} else {
+    container.textContent = '';
+    ReactDOM.createRoot(container).render(app);
+}
