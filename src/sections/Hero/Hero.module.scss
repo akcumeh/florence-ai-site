@@ -109,13 +109,51 @@
 }
 
 .caption {
+    --caption-color: rgba(255, 255, 255, 0.9);
+
     max-width: 300px;
     margin-top: 16px;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--caption-color);
     font-family: 'Figtree', sans-serif;
     font-weight: 500;
     font-size: 15px;
     line-height: 1.35;
+}
+
+.captionLink {
+    color: var(--link-color);
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+    transition:
+        text-decoration-color 125ms ease,
+        color 125ms ease;
+
+    &:hover {
+        text-decoration-color: var(--caption-color);
+    }
+
+    &:active {
+        color: var(--press-color);
+    }
+
+    &:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+        border-radius: 2px;
+    }
+}
+
+.captionWhatsapp {
+    --link-color: var(--color-whatsapp);
+    --press-color: var(--caption-color);
+}
+
+.captionTelegram {
+    --link-color: var(--caption-color);
+    --press-color: var(--color-telegram);
 }
 
 .folders {

@@ -1,3 +1,5 @@
+import whatsappIcon from '../../assets/icons/whatsapp.svg';
+import telegramIcon from '../../assets/icons/telegram.svg';
 import Button from '../../components/Button/Button';
 import { links } from '../../content/links';
 import { focusAskInput } from '../../lib/focusAskInput';
@@ -14,10 +16,22 @@ const StartFree = () => (
                 <Button variant="ink" onClick={focusAskInput} className={styles.button}>
                     Ask a question
                 </Button>
-                <Button variant="white" href={links.whatsapp} className={`${styles.button} ${styles.flat}`}>
+                <Button
+                    variant="white"
+                    brand="whatsapp"
+                    icon={whatsappIcon}
+                    href={links.whatsapp}
+                    className={`${styles.button} ${styles.flat}`}
+                >
                     Continue on WhatsApp
                 </Button>
-                <Button variant="glass" href={links.telegram} className={styles.button}>
+                <Button
+                    variant="white"
+                    brand="telegram"
+                    icon={telegramIcon}
+                    href={links.telegram}
+                    className={`${styles.button} ${styles.flat} ${styles.telegram}`}
+                >
                     Continue on Telegram
                 </Button>
             </div>

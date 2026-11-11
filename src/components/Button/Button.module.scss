@@ -80,11 +80,63 @@
     }
 }
 
+.withIcon {
+    gap: 10px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.label,
+.icon {
+    transition: color 125ms ease;
+}
+
+.brandWhatsapp:hover {
+    .label,
+    .icon {
+        color: var(--brand);
+    }
+}
+
+.brand {
+    &:active {
+        background: var(--brand);
+        border-color: var(--brand);
+        color: #fff;
+        opacity: 1;
+
+        .label,
+        .icon {
+            color: #fff;
+        }
+    }
+}
+
+.brandWhatsapp {
+    --brand: var(--color-whatsapp);
+}
+
+.brandTelegram {
+    --brand: var(--color-telegram);
+}
+
 @include desktop {
     .button {
         min-height: u(61);
         padding: 0 u(36);
         border-radius: u(14);
         font-size: u(23);
+    }
+
+    .withIcon {
+        gap: u(14);
+    }
+
+    .icon {
+        width: u(28);
+        height: u(28);
     }
 }

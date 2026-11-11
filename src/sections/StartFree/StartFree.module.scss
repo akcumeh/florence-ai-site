@@ -53,6 +53,10 @@
     backdrop-filter: none;
 }
 
+.telegram {
+    color: var(--color-telegram);
+}
+
 @include desktop {
     .section {
         padding: u(80) u(149);

@@ -5,6 +5,7 @@ import Faq from './Faq/Faq';
 import Proof from './Proof/Proof';
 import Contact from './Contact/Contact';
 import Footer from './Footer/Footer';
+import ThemeToggle from '../components/ThemeToggle/ThemeToggle';
 import Home from '../pages/Home';
 
 describe('FAQ accordion', () => {
@@ -104,6 +105,22 @@ describe('Contact and footer', () => {
             'tel:+2348143770724',
         );
         expect(screen.getByRole('link', { name: 'Mail Angel Umeh' })).toHaveAttribute('href', 'mailto:akcumeh@gmail.com');
+    });
+
+    it('links the Product Hunt badge with a theme-matched image', async () => {
+        const user = userEvent.setup();
+        renderWithProviders(
+            <>
+                <ThemeToggle />
+                <Footer />
+            </>,
+        );
+        const badge = screen.getByRole('link', { name: /product hunt/i });
+        expect(badge).toHaveAttribute('href', expect.stringContaining('producthunt.com/products/florence-ai'));
+        expect(within(badge).getByRole('img')).toHaveAttribute('src', expect.stringContaining('theme=light'));
+
+        await user.click(screen.getByRole('button', { name: /switch to dark mode/i }));
+        expect(within(badge).getByRole('img')).toHaveAttribute('src', expect.stringContaining('theme=dark'));
     });
 
     it('has footer nav, the contrast checkbox and the wordmark', () => {

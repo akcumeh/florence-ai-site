@@ -20,10 +20,13 @@ describe('Hero', () => {
 
     it('opens Telegram in a new tab', () => {
         renderWithProviders(<Hero />);
-        const tg = screen.getByRole('link', { name: 'Telegram' });
-        expect(tg).toHaveAttribute('href', 'https://t.me/FlorenceAIBot');
-        expect(tg).toHaveAttribute('target', '_blank');
-        expect(tg).toHaveAttribute('rel', 'noopener noreferrer');
+        const tgLinks = screen.getAllByRole('link', { name: 'Telegram' });
+        expect(tgLinks).toHaveLength(2);
+        for (const tg of tgLinks) {
+            expect(tg).toHaveAttribute('href', 'https://t.me/FlorenceAIBot');
+            expect(tg).toHaveAttribute('target', '_blank');
+            expect(tg).toHaveAttribute('rel', 'noopener noreferrer');
+        }
     });
 
     it('opens the general WhatsApp chat from the navbar', () => {
@@ -31,6 +34,19 @@ describe('Hero', () => {
         const wa = screen.getByRole('link', { name: 'Whatsapp' });
         expect(wa).toHaveAttribute('href', 'https://wa.me/message/PVXH2K3TDYTGP1');
         expect(wa).toHaveAttribute('target', '_blank');
+    });
+
+    it('links WhatsApp and Telegram in the caption', () => {
+        renderWithProviders(<Hero />);
+        const caption = screen.getByText(/ask questions here, or get answers on/i);
+        expect(within(caption).getByRole('link', { name: 'WhatsApp' })).toHaveAttribute(
+            'href',
+            'https://wa.me/message/PVXH2K3TDYTGP1',
+        );
+        expect(within(caption).getByRole('link', { name: 'Telegram' })).toHaveAttribute(
+            'href',
+            'https://t.me/FlorenceAIBot',
+        );
     });
 
     it('renders the wordmark with alt text and the folders as decoration', () => {

@@ -31,6 +31,10 @@
     }
 }
 
+.productHunt {
+    margin-top: 20px;
+}
+
 .name {
     color: var(--color-text);
     font-size: 17px;
@@ -132,6 +136,10 @@
         margin-top: u(57);
         font-size: u(25);
         line-height: u(35);
+    }
+
+    .productHunt {
+        margin-top: u(24);
     }
 
     .person,

@@ -1,6 +1,7 @@
 import wordmark from '../../assets/brand/wordmark.svg';
 import ContrastToggle from '../../components/ContrastToggle/ContrastToggle';
 import MaskIcon from '../../components/MaskIcon/MaskIcon';
+import ProductHuntBadge from '../../components/ProductHuntBadge/ProductHuntBadge';
 import { sectionIds } from '../../content/links';
 import { team } from '../../content/team';
 import styles from './Footer.module.scss';
@@ -19,6 +20,7 @@ const Footer = () => (
                 <p className={styles.tagline}>
                     <span>Understand your course.</span> <span>Master your exams.</span>
                 </p>
+                <ProductHuntBadge className={styles.productHunt} />
             </div>
 
             {team.map((person) => (

@@ -27,10 +27,10 @@ const Hero = ({ onAsk }) => (
                 </nav>
 
                 <div className={styles.actions}>
-                    <Button variant="white" href={links.whatsapp} className={styles.action}>
+                    <Button variant="white" brand="whatsapp" href={links.whatsapp} className={styles.action}>
                         Whatsapp
                     </Button>
-                    <Button variant="glass" href={links.telegram} className={styles.action}>
+                    <Button variant="glass" brand="telegram" href={links.telegram} className={styles.action}>
                         Telegram
                     </Button>
                     <ThemeToggle className={styles.toggle} />
@@ -42,7 +42,26 @@ const Hero = ({ onAsk }) => (
                     <span>Understand your course.</span> <span>Master your exams.</span>
                 </h1>
                 <AskForm onAsk={onAsk} id={ASK_INPUT_ID} className={styles.form} />
-                <p className={styles.caption}>Ask questions here, or get answers on WhatsApp and Telegram</p>
+                <p className={styles.caption}>
+                    Ask questions here, or get answers on{' '}
+                    <a
+                        href={links.whatsapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${styles.captionLink} ${styles.captionWhatsapp}`}
+                    >
+                        WhatsApp
+                    </a>{' '}
+                    and{' '}
+                    <a
+                        href={links.telegram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${styles.captionLink} ${styles.captionTelegram}`}
+                    >
+                        Telegram
+                    </a>
+                </p>
             </div>
 
             <img
