@@ -31,6 +31,13 @@
     }
 }
 
+.pilot {
+    margin-top: 12px;
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
 .productHunt {
     margin-top: 20px;
 }
@@ -122,7 +129,7 @@
     .grid {
         grid-template-columns: u(546) u(476) u(478) auto;
         gap: 0;
-        height: u(265);
+        min-height: u(265);
         max-width: none;
         padding: 0 0 0 u(70);
     }
@@ -136,6 +143,12 @@
         margin-top: u(57);
         font-size: u(25);
         line-height: u(35);
+    }
+
+    .pilot {
+        margin-top: u(10);
+        font-size: u(25);
+        line-height: u(30);
     }
 
     .productHunt {

@@ -98,13 +98,13 @@ describe('Contact and footer', () => {
         expect(screen.getByText('Co-founder & CTO')).toBeInTheDocument();
         expect(screen.getByRole('link', { name: 'Mail Opeyemi Muyiwa-Dada' })).toHaveAttribute(
             'href',
-            'mailto:opeyemi.muyiwa.dada2002@gmail.com',
+            'mailto:opeyemi@myflorence.site',
         );
         expect(screen.getByRole('link', { name: 'Call Opeyemi Muyiwa-Dada' })).toHaveAttribute(
             'href',
             'tel:+2348143770724',
         );
-        expect(screen.getByRole('link', { name: 'Mail Angel Umeh' })).toHaveAttribute('href', 'mailto:akcumeh@gmail.com');
+        expect(screen.getByRole('link', { name: 'Mail Angel Umeh' })).toHaveAttribute('href', 'mailto:angel@myflorence.site');
     });
 
     it('links the Product Hunt badge with a theme-matched image', async () => {
@@ -121,6 +121,21 @@ describe('Contact and footer', () => {
 
         await user.click(screen.getByRole('button', { name: /switch to dark mode/i }));
         expect(within(badge).getByRole('img')).toHaveAttribute('src', expect.stringContaining('theme=dark'));
+    });
+
+    it('shows the company details for verification', () => {
+        renderWithProviders(
+            <>
+                <Contact />
+                <Footer />
+            </>,
+        );
+        expect(screen.getByRole('link', { name: 'opeyemi@myflorence.site' })).toHaveAttribute(
+            'href',
+            'mailto:opeyemi@myflorence.site',
+        );
+        expect(screen.getByText(/RC 8759258, Lagos, Nigeria/)).toBeInTheDocument();
+        expect(screen.getByText('Live pilot at the University of Lagos.')).toBeInTheDocument();
     });
 
     it('has footer nav, the contrast checkbox and the wordmark', () => {

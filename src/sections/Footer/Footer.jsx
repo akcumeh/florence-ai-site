@@ -3,6 +3,7 @@ import ContrastToggle from '../../components/ContrastToggle/ContrastToggle';
 import MaskIcon from '../../components/MaskIcon/MaskIcon';
 import ProductHuntBadge from '../../components/ProductHuntBadge/ProductHuntBadge';
 import { sectionIds } from '../../content/links';
+import { site } from '../../content/site';
 import { team } from '../../content/team';
 import styles from './Footer.module.scss';
 
@@ -20,6 +21,7 @@ const Footer = () => (
                 <p className={styles.tagline}>
                     <span>Understand your course.</span> <span>Master your exams.</span>
                 </p>
+                <p className={styles.pilot}>{site.pilot}</p>
                 <ProductHuntBadge className={styles.productHunt} />
             </div>
 
@@ -59,7 +61,11 @@ const Footer = () => (
         </div>
 
         <div className={styles.legal}>
-            <p>2026 Florence AI. All rights reserved.</p>
+            <p>
+                2026 Florence AI. All rights reserved.
+                <br />
+                {`RC ${site.rcNumber}, ${site.city}, ${site.country}.`}
+            </p>
             <div className={styles.legalLinks}>
                 <a className={styles.legalLink}>Privacy policy</a>
                 <a className={styles.legalLink}>Terms of use</a>

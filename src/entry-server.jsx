@@ -21,8 +21,12 @@ export const structuredData = [
         '@context': 'https://schema.org',
         '@type': 'Organization',
         name: site.name,
+        legalName: site.name,
         url: site.url,
+        email: site.email,
         description: site.description,
+        identifier: { '@type': 'PropertyValue', propertyID: 'RC', value: site.rcNumber },
+        address: { '@type': 'PostalAddress', addressLocality: site.city, addressCountry: 'NG' },
         sameAs: [links.telegram, links.productHunt.split('?')[0]],
         founder: [
             { '@type': 'Person', name: 'Opeyemi Muyiwa-Dada', jobTitle: 'Co-founder & CEO' },

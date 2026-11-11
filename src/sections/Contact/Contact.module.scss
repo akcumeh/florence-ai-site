@@ -40,6 +40,18 @@
     }
 }
 
+.email {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+        border-radius: 3px;
+    }
+}
+
 @include desktop {
     .section {
         padding: u(238) u(149) 0;
