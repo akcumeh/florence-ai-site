@@ -7,5 +7,16 @@ export default defineConfig({
   server: {
     host: true,
     port: 5632,
-  }
+  },
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly',
+    },
+  },
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: ['./src/test/setup.js'],
+    css: { modules: { classNameStrategy: 'non-scoped' } },
+  },
 })

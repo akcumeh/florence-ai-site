@@ -1,23 +1,51 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="afternoon">
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/src/assets/favicon.ico" />
+    <link rel="icon" href="/src/assets/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/src/assets/favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/favicon/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Florence* AI</title>
-    <meta name="description" content="Florence is an AI study assistant for Nigerian university students on WhatsApp and Telegram." />
-    <meta property="og:title" content="Florence* AI" />
-    <meta property="og:description" content="AI study assistant for Nigerian university students on WhatsApp and Telegram." />
+    <meta name="color-scheme" content="light dark" />
+    <title>Florence* AI | Your Exam Prep Bestie</title>
+    <meta name="description" content="Florence is an AI study assistant for Nigerian university students. Ask questions, prep for exams and get clear answers on the web, WhatsApp and Telegram." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://myflorence.site/" />
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#080808" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Florence AI" />
+    <meta property="og:locale" content="en_NG" />
+    <meta property="og:url" content="https://myflorence.site/" />
+    <meta property="og:title" content="Florence* AI | Understand your course. Master your exams." />
+    <meta property="og:description" content="Florence is an AI study assistant for Nigerian university students. Ask questions, prep for exams and get clear answers on the web, WhatsApp and Telegram." />
+    <meta property="og:image" content="https://myflorence.site/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Florence AI: Understand your course. Master your exams." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Florence* AI | Understand your course. Master your exams." />
+    <meta name="twitter:description" content="Florence is an AI study assistant for Nigerian university students. Ask questions, prep for exams and get clear answers on the web, WhatsApp and Telegram." />
+    <meta name="twitter:image" content="https://myflorence.site/og-image.jpg" />
+    <script>
+        (function () {
+            var scheme, contrast;
+            try {
+                scheme = localStorage.getItem('flo-scheme');
+                contrast = localStorage.getItem('flo-contrast');
+            } catch (e) {}
+            var mq = function (q) { return window.matchMedia && window.matchMedia(q).matches; };
+            if (scheme !== 'light' && scheme !== 'dark') scheme = mq('(prefers-color-scheme: dark)') ? 'dark' : 'light';
+            contrast = contrast === 'true' || (contrast !== 'false' && mq('(prefers-contrast: more)'));
+            document.documentElement.dataset.theme = scheme === 'dark' ? 'dark' : contrast ? 'contrast' : 'afternoon';
+        })();
+    </script>
 </head>
 
 <body>
-    <div id="root">
-        <h1>Florence* AI</h1>
-        <p>Florence is an AI study assistant for Nigerian university students. Ask questions, prep for exams and study with active recall on WhatsApp, Telegram and the web.</p>
-        <p>Live pilot at the University of Lagos.</p>
-        <p>Florence AI, RC 8759258, Lagos, Nigeria. Contact: opeyemi@myflorence.site</p>
-    </div>
+    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 </body>
 

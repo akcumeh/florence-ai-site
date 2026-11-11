@@ -1,0 +1,212 @@
+@use '../../styles/tools' as *;
+
+.footer {
+    padding: 32px 12px 40px;
+    background: var(--color-page);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+.grid {
+    display: grid;
+    gap: 32px;
+    max-width: 1750px;
+    margin: 0 auto;
+    padding: 0 8px;
+}
+
+.wordmark {
+    width: 110px;
+    height: 31.3px;
+    color: var(--color-text);
+}
+
+.tagline {
+    margin-top: 20px;
+    color: var(--color-footer-muted);
+    line-height: 1.4;
+
+    span {
+        display: block;
+    }
+}
+
+.pilot {
+    margin-top: 12px;
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.productHunt {
+    margin-top: 20px;
+}
+
+.name {
+    color: var(--color-text);
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.role {
+    margin-top: 6px;
+    color: var(--color-footer-muted);
+}
+
+.contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.link,
+.navLink {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    color: var(--color-text);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+        border-radius: 3px;
+    }
+}
+
+.navList {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navLink {
+    font-weight: 500;
+}
+
+.contrast {
+    margin-top: 12px;
+}
+
+.legal {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 1889px;
+    margin: 40px auto 0;
+    padding: 24px;
+    border-radius: 28px;
+    background: url('../../assets/images/hero-bg-dark.webp') center / cover no-repeat;
+    color: #fff;
+    font-size: 15px;
+}
+
+.legalLinks {
+    display: flex;
+    gap: 24px;
+}
+
+.legalLink {
+    color: inherit;
+    text-decoration: none;
+}
+
+@include desktop {
+    .footer {
+        padding: u(60.5) u(79) u(135);
+    }
+
+    .grid {
+        grid-template-columns: u(546) u(476) u(478) auto;
+        gap: 0;
+        min-height: u(265);
+        max-width: none;
+        padding: 0 0 0 u(70);
+    }
+
+    .wordmark {
+        width: u(154.73);
+        height: u(44);
+    }
+
+    .tagline {
+        margin-top: u(57);
+        font-size: u(25);
+        line-height: u(35);
+    }
+
+    .pilot {
+        margin-top: u(10);
+        font-size: u(25);
+        line-height: u(30);
+    }
+
+    .productHunt {
+        margin-top: u(24);
+    }
+
+    .person,
+    .nav {
+        padding-top: u(9);
+    }
+
+    .name,
+    .role {
+        font-size: u(25);
+        line-height: u(30);
+    }
+
+    .role {
+        margin-top: u(10);
+    }
+
+    .contacts {
+        flex-direction: column;
+        gap: u(10);
+        margin-top: u(25);
+    }
+
+    .navList {
+        gap: u(10);
+    }
+
+    .link,
+    .navLink {
+        min-height: 0;
+        font-size: u(25);
+        line-height: u(30);
+    }
+
+    .contrast {
+        min-height: 0;
+        gap: u(12);
+        margin-top: u(16);
+        font-size: u(22);
+    }
+
+    .legal {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: u(84);
+        max-width: none;
+        margin-top: 0;
+        padding: 0 u(51) 0 u(52);
+        border-radius: u(50);
+        font-size: u(22);
+    }
+
+    .legalLinks {
+        gap: u(45);
+    }
+}

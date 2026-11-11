@@ -1,0 +1,90 @@
+@use 'sass:map';
+@use 'sass:list';
+
+$accent: #017ffd;
+$ink: #0a0a0a;
+$black: #080808;
+$white: #ffffff;
+
+$themes: (
+    afternoon: (text-rgb: (10, 10, 10), page: #fafafa, hero-wrap: $white),
+    contrast: (text-rgb: (1, 127, 253), page: #fafafa, hero-wrap: $white),
+    dark: (text-rgb: (255, 255, 255), page: $black, hero-wrap: $black),
+);
+
+@mixin theme-vars($name) {
+    $t: map.get($themes, $name);
+    $rgb: map.get($t, text-rgb);
+    $r: list.nth($rgb, 1);
+    $g: list.nth($rgb, 2);
+    $b: list.nth($rgb, 3);
+
+    --text-rgb: #{$r}, #{$g}, #{$b};
+    --color-page: #{map.get($t, page)};
+    --color-hero-wrap: #{map.get($t, hero-wrap)};
+    --color-text: rgb(var(--text-rgb));
+    --color-text-muted: rgba(var(--text-rgb), 0.7);
+    --color-rule: rgb(var(--text-rgb));
+    --color-divider: rgba(var(--text-rgb), 0.5);
+
+    --color-card-border: rgba(var(--text-rgb), 0.08);
+    --color-card-label: rgba(var(--text-rgb), 0.45);
+    --color-chip-border: rgba(var(--text-rgb), 0.2);
+    --color-answer-text: rgba(var(--text-rgb), 0.85);
+    --color-quote: rgba(var(--text-rgb), 0.55);
+
+    @if $name == dark {
+        --color-card-bg: #141414;
+        --color-footer-muted: rgba(var(--text-rgb), 0.7);
+        --btn-solid-bg: #{$white};
+        --btn-solid-fg: #{$ink};
+        --btn-ghost-bg: rgba(255, 255, 255, 0.102);
+        --btn-ghost-border: rgba(255, 255, 255, 0.4);
+        --btn-ghost-fg: #{$white};
+        color-scheme: dark;
+    } @else {
+        --color-card-bg: #{$white};
+        --color-footer-muted: rgb(var(--text-rgb));
+        --btn-solid-bg: rgb(var(--text-rgb));
+        --btn-solid-fg: #{$white};
+        --btn-ghost-bg: transparent;
+        --btn-ghost-border: rgb(var(--text-rgb));
+        --btn-ghost-fg: rgb(var(--text-rgb));
+        color-scheme: light;
+    }
+}
+
+:root {
+    --color-accent: #{$accent};
+    --color-ink: #{$ink};
+    --color-black: #{$black};
+    --color-whatsapp: #25d366;
+    --color-telegram: #2aabee;
+
+    --hero-glass-bg: rgba(255, 255, 255, 0.102);
+    --hero-glass-border: rgba(255, 255, 255, 0.4);
+    --hero-glass-shadow: 0 7.44px 22.32px -7.44px rgba(0, 0, 0, 0.1);
+    --hero-glass-blur: 11.16px;
+    --hero-placeholder: rgba(191, 191, 191, 0.87);
+
+    --hero-bg: url('../assets/images/hero-bg-afternoon.webp');
+
+    @include theme-vars(afternoon);
+}
+
+:root[data-theme='contrast'] {
+    --hero-bg: url('../assets/images/hero-bg-contrast.webp');
+
+    @include theme-vars(contrast);
+}
+
+:root[data-theme='dark'] {
+    --hero-bg: url('../assets/images/hero-bg-dark.webp');
+
+    @include theme-vars(dark);
+}
+
+body {
+    background: var(--color-page);
+    color: var(--color-text);
+}

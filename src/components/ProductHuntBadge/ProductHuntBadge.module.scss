@@ -1,0 +1,28 @@
+@use '../../styles/tools' as *;
+
+.badge {
+    display: inline-block;
+    border-radius: 10px;
+    transition: transform 150ms ease;
+
+    img {
+        width: 250px;
+        height: 54px;
+    }
+
+    &:hover {
+        transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 3px;
+    }
+}
+
+@include desktop {
+    .badge img {
+        width: u(250);
+        height: u(54);
+    }
+}

@@ -1,0 +1,9 @@
+@function u($n) {
+    @return calc(#{$n} * var(--u));
+}
+
+@mixin desktop {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}

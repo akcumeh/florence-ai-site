@@ -1,0 +1,63 @@
+@use '../../styles/tools' as *;
+
+.cards {
+    display: grid;
+    gap: 16px;
+    max-width: 1750px;
+    margin: 40px auto 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+    border: 2px solid var(--color-card-border);
+    border-radius: 20px;
+    background: var(--color-card-bg);
+    font-family: 'Figtree', sans-serif;
+}
+
+.quote {
+    margin: 0;
+    color: var(--color-quote);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.attribution {
+    color: var(--color-card-label);
+    font-size: 15px;
+    white-space: pre;
+}
+
+@include desktop {
+    .root {
+        padding-bottom: u(150);
+    }
+
+    .cards {
+        grid-template-columns: repeat(3, u(562));
+        gap: u(32);
+        max-width: none;
+        margin: u(96) 0 0 u(149);
+    }
+
+    .card {
+        gap: u(32);
+        padding: u(40);
+        border-width: u(2);
+        border-radius: u(25);
+    }
+
+    .quote {
+        font-size: u(28);
+    }
+
+    .attribution {
+        font-size: u(22);
+    }
+}

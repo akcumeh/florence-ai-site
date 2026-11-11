@@ -1,0 +1,97 @@
+@use '../../styles/tools' as *;
+
+.section {
+    padding: 8px 20px;
+    background: var(--color-page);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 1750px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    border-radius: 20px;
+    background: var(--color-accent);
+    text-align: center;
+    font-family: 'Figtree', sans-serif;
+}
+
+.title {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.text {
+    max-width: 900px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.button {
+    width: 100%;
+    min-height: 56px;
+    border-radius: 14px;
+}
+
+.flat {
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+
+.telegram {
+    color: var(--color-telegram);
+}
+
+@include desktop {
+    .section {
+        padding: u(80) u(149);
+    }
+
+    .card {
+        max-width: none;
+        gap: u(28);
+        padding: u(96);
+        border-radius: u(25);
+    }
+
+    .title {
+        font-size: u(75);
+        line-height: u(90);
+    }
+
+    .text {
+        width: u(900);
+        max-width: none;
+        font-size: u(30);
+        line-height: u(36);
+    }
+
+    .buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: u(20);
+        width: auto;
+        margin-top: 0;
+    }
+
+    .button {
+        width: auto;
+        min-height: u(61);
+        border-radius: u(14);
+    }
+}

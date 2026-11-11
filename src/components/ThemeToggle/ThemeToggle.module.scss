@@ -1,0 +1,23 @@
+.toggle {
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 11px;
+    border: 0.93px solid var(--hero-glass-border);
+    background: var(--hero-glass-bg);
+    color: #fff;
+    -webkit-backdrop-filter: blur(var(--hero-glass-blur));
+    backdrop-filter: blur(var(--hero-glass-blur));
+    transition: background-color 150ms ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.18);
+    }
+
+    &:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+    }
+}

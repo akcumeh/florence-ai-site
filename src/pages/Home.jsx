@@ -1,38 +1,25 @@
-import Header from "../components/Header";
-import Homepage from "./Homepage";
-import Footer from "../components/Footer";
-import Conversation from "../components/Conversation";
+import Hero from '../sections/Hero/Hero';
+import Proof from '../sections/Proof/Proof';
+import HowItWorks from '../sections/HowItWorks/HowItWorks';
+import AskExample from '../sections/AskExample/AskExample';
+import StartFree from '../sections/StartFree/StartFree';
+import Faq from '../sections/Faq/Faq';
+import Contact from '../sections/Contact/Contact';
+import Footer from '../sections/Footer/Footer';
 
-const Home = () => {
-    const numTokens = 10;
-    return (
-        <div className="font-yellix text-base">
-            <div className="isHome">
-                <Header
-                    isHomePage={true}
-                    isConversationPage={false}
-                    numTokens={numTokens}
-                />
-                <Homepage />
-                <Footer
-                    isHomepage={true}
-                    isConversationPage={false}
-                />
-            </div>
-            <div className="isConvo hidden">
-                <Header
-                    isHomePage={false}
-                    isConversationPage={true}
-                    numTokens={numTokens}
-                />
-                <Conversation/>
-                <Footer
-                    isHomepage={false}
-                    isConversationPage={true}
-                />
-            </div>
-        </div>
-    );
-};
+const Home = () => (
+    <>
+        <Hero />
+        <main id="main">
+            <Proof />
+            <HowItWorks />
+            <AskExample />
+            <StartFree />
+            <Faq />
+            <Contact />
+        </main>
+        <Footer />
+    </>
+);
 
 export default Home;

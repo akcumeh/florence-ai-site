@@ -1,0 +1,137 @@
+@use '../../styles/tools' as *;
+
+.list {
+    --faq-icon: 20px;
+
+    max-width: 1252px;
+    margin: 40px auto 0;
+}
+
+.row {
+    border-bottom: 0.5px solid var(--color-rule);
+}
+
+.heading {
+    font: inherit;
+}
+
+.trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    min-height: 44px;
+    padding: 20px 0;
+    border: 0;
+    background: none;
+    color: var(--color-text);
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    text-align: left;
+
+    &:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+        border-radius: 4px;
+    }
+}
+
+.panel {
+    padding-bottom: 20px;
+    color: var(--color-text-muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+
+    p {
+        max-width: 1149px;
+    }
+
+    .row:first-child & {
+        margin-top: -6px;
+    }
+}
+
+.answerLink {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--color-text);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+        border-radius: 3px;
+    }
+}
+
+.more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 56px;
+}
+
+.moreText {
+    color: var(--color-text-muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+@include desktop {
+    .root {
+        padding-top: u(111);
+        padding-bottom: u(117);
+        --hdr-gap-1: #{u(25)};
+        --hdr-gap-2: #{u(25)};
+    }
+
+    .list {
+        --faq-icon: #{u(25)};
+
+        width: u(1252);
+        max-width: none;
+        margin-top: u(64);
+    }
+
+    .trigger {
+        min-height: 0;
+        padding: u(34) u(20) calc(#{u(36)} - 0.5px) u(19);
+        font-size: u(35);
+        line-height: u(42);
+    }
+
+    .panel,
+    .row:first-child .panel {
+        margin-top: u(-11);
+        padding: 0 0 calc(#{u(46)} - 0.5px) u(19);
+        font-size: u(25);
+        line-height: u(30);
+
+        p {
+            max-width: u(1149);
+        }
+    }
+
+    .answerLink {
+        min-height: 0;
+        margin-top: u(10);
+    }
+
+    .more {
+        gap: u(30);
+        margin-top: u(146);
+    }
+
+    .moreText {
+        font-size: u(25);
+        line-height: u(30);
+    }
+}

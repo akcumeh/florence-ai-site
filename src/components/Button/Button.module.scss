@@ -1,0 +1,142 @@
+@use '../../styles/tools' as *;
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 12px;
+    border: 0.93px solid transparent;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1;
+    white-space: nowrap;
+    text-decoration: none;
+    transition:
+        background-color 150ms ease,
+        opacity 150ms ease;
+
+    &:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 3px;
+    }
+
+    &[aria-disabled='true'] {
+        cursor: default;
+    }
+}
+
+.solid {
+    background: var(--btn-solid-bg);
+    color: var(--btn-solid-fg);
+
+    &:hover {
+        opacity: 0.88;
+    }
+}
+
+.ghost {
+    background: var(--btn-ghost-bg);
+    border-color: var(--btn-ghost-border);
+    color: var(--btn-ghost-fg);
+
+    &:hover {
+        background: rgba(var(--text-rgb), 0.08);
+    }
+}
+
+.glass {
+    background: var(--hero-glass-bg);
+    border-color: var(--hero-glass-border);
+    color: #fff;
+    -webkit-backdrop-filter: blur(var(--hero-glass-blur));
+    backdrop-filter: blur(var(--hero-glass-blur));
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.18);
+    }
+}
+
+.white {
+    background: #fff;
+    color: var(--color-ink);
+    box-shadow: var(--hero-glass-shadow);
+    -webkit-backdrop-filter: blur(var(--hero-glass-blur));
+    backdrop-filter: blur(var(--hero-glass-blur));
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.88);
+    }
+}
+
+.ink {
+    background: var(--color-ink);
+    color: #fff;
+
+    &:hover {
+        opacity: 0.88;
+    }
+}
+
+.withIcon {
+    gap: 10px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.label,
+.icon {
+    transition: color 125ms ease;
+}
+
+.brandWhatsapp:hover {
+    .label,
+    .icon {
+        color: var(--brand);
+    }
+}
+
+.brand {
+    &:active {
+        background: var(--brand);
+        border-color: var(--brand);
+        color: #fff;
+        opacity: 1;
+
+        .label,
+        .icon {
+            color: #fff;
+        }
+    }
+}
+
+.brandWhatsapp {
+    --brand: var(--color-whatsapp);
+}
+
+.brandTelegram {
+    --brand: var(--color-telegram);
+}
+
+@include desktop {
+    .button {
+        min-height: u(61);
+        padding: 0 u(36);
+        border-radius: u(14);
+        font-size: u(23);
+    }
+
+    .withIcon {
+        gap: u(14);
+    }
+
+    .icon {
+        width: u(28);
+        height: u(28);
+    }
+}
