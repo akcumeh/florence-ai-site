@@ -6,7 +6,6 @@ afterEach(() => {
     cleanup();
     localStorage.clear();
     window.__mediaMatches = {};
-    delete document.documentElement.dataset.theme;
 });
 
 window.__mediaMatches = {};

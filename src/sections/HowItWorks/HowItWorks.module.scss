@@ -1,106 +1,172 @@
-@use '../../styles/tools' as *;
+@use '../../styles/type';
 
-.steps {
-    --icon-unit: 0.75px;
+.section {
+    padding: 80px var(--gutter);
+    background: var(--web-bg);
+    scroll-margin-top: 16px;
 
+    @media (min-width: 900px) {
+        padding: 160px var(--gutter);
+    }
+}
+
+.inner {
     display: flex;
     flex-direction: column;
-    max-width: 480px;
-    margin: 40px auto 0;
-    padding: 0;
-    list-style: none;
-}
+    gap: 28px;
+    max-width: var(--page-max);
+    margin: 0 auto;
 
-.step {
-    padding: 28px 0;
-
-    & + & {
-        border-top: 0.5px solid var(--color-divider);
+    @media (min-width: 900px) {
+        align-items: center;
+        gap: 72px;
     }
-
-    &:first-child {
-        padding-top: 0;
-    }
-}
-
-.icon {
-    color: var(--color-text);
 }
 
 .title {
+    @include type.display;
+    font-size: 32px;
+    line-height: 0.98;
+    letter-spacing: -0.96px;
+
+    @media (min-width: 900px) {
+        font-size: 48px;
+        letter-spacing: -1.44px;
+        text-align: center;
+    }
+}
+
+.steps {
+    position: relative;
     display: flex;
-    gap: 7px;
-    margin-top: 20px;
-    color: var(--color-text);
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1.25;
-}
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
-.number {
-    flex: none;
-}
-
-.description {
-    margin-top: 10px;
-    color: var(--color-text-muted);
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.4;
-}
-
-@include desktop {
-    .root {
-        padding-bottom: u(150);
-        --action-gap: #{u(73)};
+    @media (min-width: 900px) {
+        flex-direction: row;
+        gap: 0;
     }
+}
 
-    .steps {
-        --icon-unit: var(--u);
+.step {
+    display: flex;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1.5px solid var(--web-line);
 
-        display: grid;
-        grid-template-columns: u(586) u(634) u(554);
-        max-width: none;
-        margin: u(113) 0 0 u(137);
-    }
-
-    .step {
-        height: u(316);
-        padding: u(11) 0 0;
-
-        & + & {
-            padding-left: u(78);
-            border-top: 0;
-            border-left: 0.5px solid var(--color-divider);
-        }
+    @media (min-width: 900px) {
+        flex: 1 1 0;
+        flex-direction: column;
+        gap: 14px;
+        padding: 0 48px;
+        border-bottom: 0;
+        border-left: 1.5px solid var(--web-line);
 
         &:first-child {
-            padding-top: u(11);
+            padding-left: 0;
+            border-left: 0;
         }
     }
+}
 
-    .iconSlot {
-        height: u(82);
+.badge {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 14px;
+
+    @media (min-width: 900px) {
+        width: 52px;
+        height: 52px;
+        border-radius: 26px;
+        font-size: 17px;
     }
+}
 
-    .title {
-        gap: u(7);
-        margin-top: 0;
-        font-size: u(27);
-        line-height: u(33);
-        white-space: nowrap;
+.badgeSun {
+    background: var(--web-sun);
+    color: var(--web-ink);
+}
+
+.badgeBrand {
+    background: var(--web-brand);
+    color: var(--web-on-brand);
+}
+
+.badgeLeaf {
+    background: var(--web-leaf);
+    color: var(--web-ink);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    @media (min-width: 900px) {
+        gap: 14px;
     }
+}
 
-    .description {
-        margin-top: u(18);
-        font-size: u(23);
-        line-height: u(28);
-        white-space: nowrap;
+.stepTitle {
+    @include type.display-bold;
+    font-size: 19px;
+    line-height: 1.15;
+    letter-spacing: -0.57px;
 
-        span {
-            display: block;
-        }
+    @media (min-width: 900px) {
+        max-width: 300px;
+        font-size: 26px;
+        letter-spacing: -0.78px;
+    }
+}
+
+.body {
+    color: var(--web-text-2);
+    font-size: 14px;
+    line-height: 1.5;
+
+    @media (min-width: 900px) {
+        max-width: 300px;
+        font-size: 17px;
+    }
+}
+
+.long {
+    display: none;
+
+    @media (min-width: 900px) {
+        display: inline;
+    }
+}
+
+.short {
+    @media (min-width: 900px) {
+        display: none;
+    }
+}
+
+.curl {
+    position: absolute;
+    top: 1.4px;
+    left: 245.3px;
+    display: none;
+    width: 110px;
+    height: 60px;
+    color: var(--web-brand-text);
+    transform: rotate(8deg);
+
+    @media (min-width: 900px) {
+        display: block;
     }
 }

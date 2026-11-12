@@ -1,0 +1,75 @@
+@use '../../styles/type';
+
+.logo {
+    display: inline-flex;
+    align-items: flex-start;
+    color: var(--web-text);
+    text-decoration: none;
+}
+
+.word {
+    @include type.display;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.star {
+    flex: none;
+    height: auto;
+}
+
+.nav {
+    gap: 2px;
+
+    .word {
+        font-size: 26px;
+        letter-spacing: -0.78px;
+    }
+
+    .star {
+        width: 11px;
+        margin-top: 4px;
+    }
+
+    @media (min-width: 900px) {
+        gap: 3px;
+
+        .word {
+            font-size: 34px;
+            letter-spacing: -1.02px;
+        }
+
+        .star {
+            width: 15px;
+            margin-top: 5px;
+        }
+    }
+}
+
+.footer {
+    gap: 2px;
+
+    .word {
+        font-size: 22px;
+        letter-spacing: -0.66px;
+    }
+
+    .star {
+        width: 10px;
+        margin-top: 3px;
+    }
+
+    @media (min-width: 900px) {
+        gap: 3px;
+
+        .word {
+            font-size: 26px;
+            letter-spacing: -0.78px;
+        }
+
+        .star {
+            width: 11px;
+            margin-top: 4px;
+        }
+    }
+}

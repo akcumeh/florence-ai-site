@@ -1,0 +1,125 @@
+.bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 8px;
+    border: 2px solid var(--web-text);
+    border-radius: 999px;
+    background: var(--web-surface);
+    box-shadow: 0 6px 0 0 var(--web-shadow);
+
+    @media (min-width: 900px) {
+        gap: 14px;
+        padding: 10px 10px 10px 12px;
+        border-width: 2.5px;
+        box-shadow: 0 8px 0 0 var(--web-shadow);
+    }
+}
+
+.hero {
+    @media (min-width: 900px) {
+        max-width: 780px;
+    }
+}
+
+.final {
+    @media (min-width: 900px) {
+        max-width: 680px;
+    }
+}
+
+.sticky {
+    max-width: 350px;
+}
+
+.attach {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 26px;
+    background: var(--web-surface-2);
+    color: var(--web-text);
+    transition: background-color 0.12s ease;
+
+    &:active {
+        background: var(--web-line);
+    }
+}
+
+.clip {
+    width: 20px;
+    height: 20px;
+
+    @media (min-width: 900px) {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.input {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--web-text);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    outline: none;
+
+    &::placeholder {
+        color: var(--web-text-2);
+        opacity: 1;
+    }
+
+    @media (min-width: 900px) {
+        font-size: 20px;
+    }
+}
+
+.bar:focus-within {
+    outline: 3px solid var(--web-brand);
+    outline-offset: 3px;
+}
+
+.ask {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    gap: 6px;
+    height: 52px;
+    padding: 0 18px 0 20px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--web-brand);
+    color: var(--web-on-brand);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: filter 0.12s ease;
+
+    &:active {
+        filter: brightness(0.88);
+    }
+
+    @media (min-width: 900px) {
+        gap: 8px;
+        padding: 0 24px 0 28px;
+        font-size: 19px;
+    }
+}
+
+.arrow {
+    width: 16px;
+    height: 16px;
+
+    @media (min-width: 900px) {
+        width: 18px;
+        height: 18px;
+    }
+}

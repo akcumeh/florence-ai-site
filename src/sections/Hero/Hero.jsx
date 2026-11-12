@@ -1,79 +1,101 @@
-import wordmark from '../../assets/brand/wordmark-hero.svg';
-import folders from '../../assets/images/folder-cluster.webp';
-import Button from '../../components/Button/Button';
-import ThemeToggle from '../../components/ThemeToggle/ThemeToggle';
-import AskForm from '../../components/AskForm/AskForm';
-import { ASK_INPUT_ID, links, navItems } from '../../content/links';
+import { useState } from 'react';
+import ribbon from '../../assets/v21/ribbon-hero.svg';
+import sunStar from '../../assets/v21/asterisk-hero-sun.svg';
+import blueStar from '../../assets/v21/asterisk-hero-blue.svg';
+import mSunStar from '../../assets/v21/m-asterisk-hero-sun.svg';
+import mBlueStar from '../../assets/v21/m-asterisk-hero-blue.svg';
+import underline from '../../assets/v21/underline.svg';
+import mUnderline from '../../assets/v21/m-underline.svg';
+import dotLeaf from '../../assets/v21/dot-leaf.svg';
+import dotSky from '../../assets/v21/dot-sky.svg';
+import AskBar from '../../components/AskBar/AskBar';
+import ChatButtons from '../../components/ChatButtons/ChatButtons';
+import MaskIcon from '../../components/MaskIcon/MaskIcon';
+import { appUrl as defaultAppUrl, ASK_INPUT_ID, links } from '../../content/links';
 import styles from './Hero.module.scss';
 
-const Hero = ({ onAsk }) => (
-    <header className={styles.wrap}>
-        <div className={styles.card}>
-            <div className={styles.bar}>
-                <a href="/" className={styles.logo}>
-                    <img src={wordmark} alt="Florence" width="105.5" height="30" />
-                </a>
+const CHIPS = [
+    { text: 'Explain osmosis simply', tone: 'chipSun' },
+    { text: 'Quiz me on my BIO 102 notes', tone: 'chipLeaf' },
+    { text: 'Why does a ball thrown up slow down?', tone: 'chipLilac' },
+];
 
-                <nav aria-label="Main" className={styles.nav}>
-                    <ul className={styles.navList}>
-                        {navItems.map((item) => (
-                            <li key={item.href}>
-                                <a href={item.href} className={styles.navLink}>
-                                    {item.label}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
+const Hero = ({ appUrl = defaultAppUrl, barRef }) => {
+    const [question, setQuestion] = useState('');
 
-                <div className={styles.actions}>
-                    <Button variant="white" brand="whatsapp" href={links.whatsapp} className={styles.action}>
-                        Whatsapp
-                    </Button>
-                    <Button variant="glass" brand="telegram" href={links.telegram} className={styles.action}>
-                        Telegram
-                    </Button>
-                    <ThemeToggle className={styles.toggle} />
-                </div>
+    const fill = (text) => {
+        setQuestion(text);
+        document.getElementById(ASK_INPUT_ID)?.focus();
+    };
+
+    return (
+        <section className={styles.hero} aria-labelledby="hero-title">
+            <div className={styles.decor} aria-hidden="true">
+                <MaskIcon src={ribbon} className={styles.ribbon} />
+                <MaskIcon src={sunStar} className={styles.starSun} />
+                <MaskIcon src={blueStar} className={styles.starBlue} />
+                <MaskIcon src={mSunStar} className={styles.mStarSun} />
+                <MaskIcon src={mBlueStar} className={styles.mStarBlue} />
             </div>
-
-            <div className={styles.body}>
-                <h1 className={styles.title}>
-                    <span>Understand your course.</span> <span>Master your exams.</span>
+            <div className={styles.inner}>
+                <h1 id="hero-title" className={styles.title}>
+                    Understand your course. <br className={styles.break} />
+                    Master your exams.
                 </h1>
-                <AskForm onAsk={onAsk} id={ASK_INPUT_ID} className={styles.form} />
-                <p className={styles.caption}>
-                    Ask questions here, or get answers on{' '}
+                <MaskIcon src={underline} className={styles.underline} />
+                <MaskIcon src={mUnderline} className={styles.mUnderline} />
+                <p className={styles.lead}>
+                    <span className={styles.leadLong}>
+                        Ask anything, or turn your notes into practice questions. Every answer explained step by
+                        step.
+                    </span>
+                    <span className={styles.leadShort}>Ask anything, or turn your notes into practice questions.</span>
+                </p>
+                <div className={styles.ask} id="ask" ref={barRef}>
+                    {appUrl ? (
+                        <AskBar id={ASK_INPUT_ID} value={question} onChange={setQuestion} appUrl={appUrl} />
+                    ) : (
+                        <ChatButtons />
+                    )}
+                </div>
+                {appUrl ? (
+                    <div className={styles.chips}>
+                        {CHIPS.map((chip) => (
+                            <button
+                                key={chip.text}
+                                type="button"
+                                className={`${styles.chip} ${styles[chip.tone]}`}
+                                onClick={() => fill(chip.text)}
+                            >
+                                {chip.text}
+                            </button>
+                        ))}
+                    </div>
+                ) : null}
+                <p className={styles.handoff}>
+                    <span>or continue on</span>
                     <a
+                        className={`${styles.chat} ${styles.wa}`}
                         href={links.whatsapp}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`${styles.captionLink} ${styles.captionWhatsapp}`}
                     >
-                        WhatsApp
-                    </a>{' '}
-                    and{' '}
+                        <img src={dotLeaf} alt="" width="10" height="10" />
+                        <span className={styles.chatLabel}>WhatsApp</span>
+                    </a>
                     <a
+                        className={`${styles.chat} ${styles.tg}`}
                         href={links.telegram}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`${styles.captionLink} ${styles.captionTelegram}`}
                     >
-                        Telegram
+                        <img src={dotSky} alt="" width="10" height="10" />
+                        <span className={styles.chatLabel}>Telegram</span>
                     </a>
                 </p>
             </div>
-
-            <img
-                className={styles.folders}
-                src={folders}
-                alt=""
-                width="1383"
-                height="461"
-                fetchPriority="high"
-            />
-        </div>
-    </header>
-);
+        </section>
+    );
+};
 
 export default Hero;

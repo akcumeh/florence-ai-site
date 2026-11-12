@@ -1,0 +1,31 @@
+@mixin display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-variation-settings: 'opsz' 14, 'wdth' 100;
+}
+
+@mixin display-bold {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-variation-settings: 'opsz' 14, 'wdth' 100;
+}
+
+@mixin kicker {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    @media (min-width: 900px) {
+        font-size: 14px;
+    }
+}
+
+@mixin section-title {
+    @include display;
+    font-size: clamp(32px, 2.2vw + 22px, 48px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+}

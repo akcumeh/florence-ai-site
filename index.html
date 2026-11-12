@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="afternoon">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -14,7 +14,7 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://myflorence.site/" />
     <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#080808" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Florence AI" />
     <meta property="og:locale" content="en_NG" />
@@ -29,19 +29,6 @@
     <meta name="twitter:title" content="Florence* AI | Understand your course. Master your exams." />
     <meta name="twitter:description" content="Florence is an AI study assistant for Nigerian university students. Ask questions, prep for exams and get clear answers on the web, WhatsApp and Telegram." />
     <meta name="twitter:image" content="https://myflorence.site/og-image.jpg" />
-    <script>
-        (function () {
-            var scheme, contrast;
-            try {
-                scheme = localStorage.getItem('flo-scheme');
-                contrast = localStorage.getItem('flo-contrast');
-            } catch (e) {}
-            var mq = function (q) { return window.matchMedia && window.matchMedia(q).matches; };
-            if (scheme !== 'light' && scheme !== 'dark') scheme = mq('(prefers-color-scheme: dark)') ? 'dark' : 'light';
-            contrast = contrast === 'true' || (contrast !== 'false' && mq('(prefers-contrast: more)'));
-            document.documentElement.dataset.theme = scheme === 'dark' ? 'dark' : contrast ? 'contrast' : 'afternoon';
-        })();
-    </script>
 </head>
 
 <body>

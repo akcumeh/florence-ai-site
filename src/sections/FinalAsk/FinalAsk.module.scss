@@ -1,0 +1,109 @@
+@use '../../styles/type';
+
+.band {
+    position: relative;
+    overflow: hidden;
+    padding: 64px var(--gutter);
+    background: var(--web-band);
+    color: var(--web-white);
+
+    @media (min-width: 900px) {
+        min-height: 520px;
+        padding: 143px var(--gutter) 120px;
+    }
+}
+
+.ribbon {
+    position: absolute;
+    top: -85.85px;
+    left: 50%;
+    display: none;
+    width: 1816.68px;
+    max-width: none;
+    height: 605.828px;
+    margin-left: -908.34px;
+    pointer-events: none;
+
+    @media (min-width: 900px) {
+        display: block;
+    }
+}
+
+.star {
+    position: absolute;
+    top: 266.75px;
+    left: calc(50% + 452.2px);
+    display: none;
+    width: 320px;
+    max-width: none;
+    height: 305.672px;
+    transform: rotate(-14deg);
+    pointer-events: none;
+
+    @media (min-width: 900px) {
+        display: block;
+    }
+}
+
+.mStar {
+    position: absolute;
+    top: 144.98px;
+    left: calc(50% + 90.1px);
+    width: 150px;
+    height: 143.284px;
+    transform: rotate(-14deg);
+    pointer-events: none;
+
+    @media (min-width: 900px) {
+        display: none;
+    }
+}
+
+.inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+
+    @media (min-width: 900px) {
+        gap: 40px;
+    }
+}
+
+.title {
+    @include type.display;
+    max-width: 350px;
+    font-size: 32px;
+    line-height: 0.98;
+    letter-spacing: -0.96px;
+
+    @media (min-width: 900px) {
+        max-width: none;
+        font-size: 56px;
+        letter-spacing: -1.68px;
+    }
+}
+
+.lead {
+    max-width: 330px;
+    font-weight: 500;
+    font-size: 14px;
+    opacity: 0.9;
+
+    @media (min-width: 900px) {
+        max-width: none;
+        font-size: 18px;
+    }
+}
+
+.bar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: var(--web-text);
+}

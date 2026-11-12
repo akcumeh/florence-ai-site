@@ -8,8 +8,8 @@
     padding: 24px 20px;
     text-align: center;
     font-family: 'Figtree', sans-serif;
-    background: var(--color-page);
-    color: var(--color-text);
+    background: var(--web-bg);
+    color: var(--web-text);
 }
 
 .brand {
@@ -17,7 +17,7 @@
 }
 
 .star {
-    color: var(--color-accent);
+    color: var(--web-brand-text);
 }
 
 .code {
@@ -34,7 +34,7 @@
 .body {
     max-width: 480px;
     font-size: 16px;
-    color: var(--color-text-muted);
+    color: var(--web-text-2);
 }
 
 .button {
@@ -43,8 +43,8 @@
     min-height: 48px;
     padding: 0 28px;
     border-radius: 14px;
-    background: var(--btn-solid-bg);
-    color: var(--btn-solid-fg);
+    background: var(--web-brand);
+    color: var(--web-on-brand);
     font-weight: 500;
     text-decoration: none;
 }
