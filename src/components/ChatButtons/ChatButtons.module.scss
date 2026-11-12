@@ -1,0 +1,73 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.button {
+    display: inline-flex;
+    flex: 1 1 160px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-width: 260px;
+    height: 56px;
+    padding: 0 22px;
+    border: 2px solid var(--web-text);
+    border-radius: 999px;
+    background: var(--web-surface);
+    box-shadow: 0 6px 0 0 var(--web-shadow);
+    color: var(--web-text);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+        background-color 0.12s ease,
+        color 0.12s ease,
+        transform 0.08s ease;
+
+    &:active {
+        transform: translateY(2px);
+        color: var(--web-white);
+    }
+}
+
+@media (max-width: 519px) {
+    .prefix {
+        display: none;
+    }
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.whatsapp {
+    .icon {
+        color: var(--web-whatsapp);
+    }
+
+    &:active {
+        background: var(--web-whatsapp);
+
+        .icon {
+            color: var(--web-white);
+        }
+    }
+}
+
+.telegram {
+    color: var(--web-telegram);
+
+    &:active {
+        background: var(--web-telegram);
+    }
+}
+
+.onBand .button {
+    border-color: var(--web-ink);
+}

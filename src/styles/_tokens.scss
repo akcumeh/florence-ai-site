@@ -1,0 +1,69 @@
+:root {
+    --web-brand: #1e6bf0;
+    --web-band: #1e6bf0;
+    --web-on-brand: #ffffff;
+    --web-sun: #ffc83d;
+    --web-leaf: #2bc46f;
+    --web-sky: #66b6ff;
+    --web-lilac: #b9a6ff;
+    --web-ink: #0a0a0a;
+    --web-white: #ffffff;
+    --web-whatsapp: #25d366;
+    --web-telegram: #2aabee;
+
+    --web-bg: #fafafa;
+    --web-surface: #ffffff;
+    --web-surface-2: #f1f2f5;
+    --web-text: #0a0a0a;
+    --web-text-2: #5b6170;
+    --web-line: #e4e6eb;
+    --web-edge: #ffffff;
+    --web-ribbon: #eeeff2;
+    --web-brand-text: #1a62e0;
+    --web-leaf-text: #0f6b3a;
+    --web-sun-tint: #fff3cc;
+    --web-leaf-tint: #ddf6e7;
+    --web-lilac-tint: #eee9ff;
+    --web-blue-tint: #e6f0fd;
+    --web-invert: #0a0a0a;
+    --web-on-invert: #ffffff;
+    --web-shadow: rgba(10, 10, 10, 0.12);
+
+    --font-display: 'Bricolage Grotesque Variable', 'Figtree', system-ui, sans-serif;
+    --font-body: 'Figtree', system-ui, sans-serif;
+    --font-mono: 'Geist Mono', ui-monospace, monospace;
+    --font-hand: 'Caveat', cursive;
+
+    --page-max: 1200px;
+    --gutter: 20px;
+
+    color-scheme: light dark;
+}
+
+@media (min-width: 900px) {
+    :root {
+        --gutter: 120px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --web-bg: #0a0a0a;
+        --web-surface: #16171a;
+        --web-surface-2: #1e2024;
+        --web-text: #fafafa;
+        --web-text-2: #a9afbc;
+        --web-line: #2a2d34;
+        --web-edge: #2a2d34;
+        --web-ribbon: #141518;
+        --web-brand-text: #66b6ff;
+        --web-leaf-text: #4ade80;
+        --web-sun-tint: #2e2610;
+        --web-leaf-tint: #0d2a1a;
+        --web-lilac-tint: #221c3d;
+        --web-blue-tint: #12243f;
+        --web-invert: #fafafa;
+        --web-on-invert: #0a0a0a;
+        --web-shadow: rgba(0, 0, 0, 0.55);
+    }
+}

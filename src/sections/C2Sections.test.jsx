@@ -1,73 +1,47 @@
-import { screen, within } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../test/renderWithProviders';
-import { ASK_INPUT_ID } from '../content/links';
+import Product from './Product/Product';
 import HowItWorks from './HowItWorks/HowItWorks';
-import AskExample from './AskExample/AskExample';
-import StartFree from './StartFree/StartFree';
+import Proof from './Proof/Proof';
 
-const withAskInput = (ui) => (
-    <>
-        <input id={ASK_INPUT_ID} aria-label="Your question" />
-        {ui}
-    </>
-);
+describe('Product', () => {
+    it('starts on Prep Mode and switches to Ask by click and by arrow key', async () => {
+        const user = userEvent.setup();
+        renderWithProviders(<Product />);
+        const prep = screen.getByRole('tab', { name: 'Prep Mode' });
+        const ask = screen.getByRole('tab', { name: 'Ask' });
+        expect(prep).toHaveAttribute('aria-selected', 'true');
+        expect(screen.getByText('What is the SI unit of force?')).toBeInTheDocument();
+
+        await user.click(ask);
+        expect(ask).toHaveAttribute('aria-selected', 'true');
+        expect(screen.getByText('Why does a ball thrown upward slow down?')).toBeInTheDocument();
+        expect(screen.getByRole('tabpanel')).toHaveAttribute('aria-labelledby', ask.id);
+
+        ask.focus();
+        await user.keyboard('{ArrowRight}');
+        expect(prep).toHaveAttribute('aria-selected', 'true');
+        expect(prep).toHaveFocus();
+    });
+});
 
 describe('How it works', () => {
-    it('lists the three numbered steps in order', () => {
-        renderWithProviders(<HowItWorks />);
-        const section = screen.getByRole('region', { name: 'From your notes to exam-ready' });
-        expect(section).toHaveAttribute('id', 'how-it-works');
-        const steps = within(section).getAllByRole('listitem');
-        expect(steps.map((s) => within(s).getByRole('heading', { level: 3 }).textContent)).toEqual([
-            '1.Upload your material',
-            '2.Get questions to practise',
-            '3.See the answers clearly',
-        ]);
-    });
-
-    it('"Try it now" focuses the hero question box', async () => {
-        const user = userEvent.setup();
-        renderWithProviders(withAskInput(<HowItWorks />));
-        await user.click(screen.getByRole('button', { name: 'Try it now' }));
-        expect(screen.getByRole('textbox', { name: 'Your question' })).toHaveFocus();
+    it('lists the three steps under the anchor', () => {
+        const { container } = renderWithProviders(<HowItWorks />);
+        expect(container.querySelector('#how-it-works')).not.toBeNull();
+        expect(screen.getByRole('heading', { name: 'Three steps. No all-nighter.' })).toBeInTheDocument();
+        expect(screen.getAllByRole('listitem')).toHaveLength(3);
+        expect(screen.getByRole('heading', { name: "Practise like it's the exam" })).toBeInTheDocument();
     });
 });
 
-describe('Ask example', () => {
-    it('shows the example question, answer and source', () => {
-        renderWithProviders(<AskExample />);
-        const card = screen.getByRole('figure', { name: 'Example answer' });
-        expect(within(card).getByText('Why does a ball thrown upward slow down before it falls?')).toBeInTheDocument();
-        expect(within(card).getByText(/9\.8 m\/s²/)).toBeInTheDocument();
-        expect(within(card).getByText('Grounded in your notes: PHY 101, Lecture 4')).toBeInTheDocument();
-    });
-
-    it('uses the corrected title', () => {
-        renderWithProviders(<AskExample />);
-        expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('A clear answer is one question away');
-    });
-
-    it('"Ask a question" focuses the hero question box', async () => {
-        const user = userEvent.setup();
-        renderWithProviders(withAskInput(<AskExample />));
-        await user.click(screen.getByRole('button', { name: 'Ask a question' }));
-        expect(screen.getByRole('textbox', { name: 'Your question' })).toHaveFocus();
-    });
-});
-
-describe('Start free', () => {
-    it('offers ask, WhatsApp and Telegram', () => {
-        renderWithProviders(<StartFree />);
-        expect(screen.getByRole('heading', { name: 'Start free' })).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: 'Ask a question' })).toBeInTheDocument();
-        expect(screen.getByRole('link', { name: 'Continue on WhatsApp' })).toHaveAttribute(
-            'href',
-            'https://wa.me/message/PVXH2K3TDYTGP1',
-        );
-        expect(screen.getByRole('link', { name: 'Continue on Telegram' })).toHaveAttribute(
-            'href',
-            'https://t.me/FlorenceAIBot',
-        );
+describe('Proof', () => {
+    it('shows the real stats and their source', () => {
+        renderWithProviders(<Proof />);
+        expect(screen.getByText('5,000')).toBeInTheDocument();
+        expect(screen.getByText('50,000+')).toBeInTheDocument();
+        expect(screen.getByText('UNILAG')).toBeInTheDocument();
+        expect(screen.getByText(/as of 18 August 2026/)).toBeInTheDocument();
     });
 });

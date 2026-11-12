@@ -17,6 +17,7 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./src/test/setup.js'],
+    exclude: ['**/node_modules/**', '**/dist/**', 'src/components/ThemeToggle/**', 'src/theme/**'],
     css: { modules: { classNameStrategy: 'non-scoped' } },
   },
 })

@@ -1,63 +1,117 @@
-@use '../../styles/tools' as *;
+@use '../../styles/type';
 
-.cards {
-    display: grid;
-    gap: 16px;
-    max-width: 1750px;
-    margin: 40px auto 0;
-    padding: 0;
-    list-style: none;
-}
-
-.card {
+.section {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
-    padding: 24px;
-    border: 2px solid var(--color-card-border);
-    border-radius: 20px;
-    background: var(--color-card-bg);
-    font-family: 'Figtree', sans-serif;
+    padding: 56px var(--gutter);
+    background: var(--web-surface-2);
+    text-align: center;
+
+    @media (min-width: 900px) {
+        gap: 48px;
+        padding: 120px var(--gutter);
+    }
 }
 
-.quote {
+.kicker {
+    @include type.kicker;
+    color: var(--web-text-2);
+}
+
+.stats {
+    display: flex;
+    gap: 24px;
     margin: 0;
-    color: var(--color-quote);
-    font-size: 18px;
+    padding: 0;
+    list-style: none;
+
+    @media (min-width: 900px) {
+        gap: 120px;
+    }
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+
+    @media (min-width: 900px) {
+        gap: 6px;
+    }
+}
+
+.value {
+    @include type.display;
+    font-size: 26px;
+    line-height: 1;
+    letter-spacing: -0.78px;
+    white-space: nowrap;
+
+    @media (min-width: 900px) {
+        font-size: 60px;
+        letter-spacing: -1.8px;
+    }
+}
+
+.bar {
+    width: 28px;
+    height: 5px;
+    border-radius: 4px;
+
+    @media (min-width: 900px) {
+        width: 48px;
+        height: 7px;
+    }
+}
+
+.barSun {
+    background: var(--web-sun);
+}
+
+.barLeaf {
+    background: var(--web-leaf);
+}
+
+.barLilac {
+    background: var(--web-lilac);
+}
+
+.label {
+    color: var(--web-text-2);
     font-weight: 500;
-    line-height: 1.4;
+    font-size: 13px;
+    line-height: 1.5;
+
+    @media (min-width: 900px) {
+        font-size: 17px;
+    }
 }
 
-.attribution {
-    color: var(--color-card-label);
-    font-size: 15px;
-    white-space: pre;
+.source {
+    max-width: 330px;
+    color: var(--web-text-2);
+    font-size: 11px;
+    line-height: 1.5;
+
+    @media (min-width: 900px) {
+        max-width: 800px;
+        font-size: 13px;
+    }
 }
 
-@include desktop {
-    .root {
-        padding-bottom: u(150);
-    }
+.long {
+    display: none;
 
-    .cards {
-        grid-template-columns: repeat(3, u(562));
-        gap: u(32);
-        max-width: none;
-        margin: u(96) 0 0 u(149);
+    @media (min-width: 900px) {
+        display: inline;
     }
+}
 
-    .card {
-        gap: u(32);
-        padding: u(40);
-        border-width: u(2);
-        border-radius: u(25);
-    }
-
-    .quote {
-        font-size: u(28);
-    }
-
-    .attribution {
-        font-size: u(22);
+.short {
+    @media (min-width: 900px) {
+        display: none;
     }
 }

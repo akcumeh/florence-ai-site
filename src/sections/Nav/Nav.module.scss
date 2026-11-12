@@ -1,0 +1,116 @@
+.nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: calc(var(--page-max) + 2 * var(--gutter));
+    margin: 0 auto;
+    padding: 18px var(--gutter);
+
+    @media (min-width: 900px) {
+        padding: 26px var(--gutter);
+    }
+}
+
+.home {
+    display: inline-flex;
+    text-decoration: none;
+}
+
+.links {
+    display: none;
+    align-items: center;
+    gap: 40px;
+
+    @media (min-width: 900px) {
+        display: flex;
+    }
+}
+
+.link {
+    color: var(--web-text-2);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.5;
+    text-decoration: none;
+
+    &:hover {
+        color: var(--web-text);
+    }
+}
+
+.login {
+    color: var(--web-text);
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.5;
+    text-decoration: none;
+
+    @media (min-width: 900px) {
+        font-size: 17px;
+    }
+}
+
+.mobile {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    @media (min-width: 900px) {
+        display: none;
+    }
+}
+
+.menuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: -8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--web-text);
+}
+
+.menuIcon {
+    width: 24px;
+    height: 24px;
+}
+
+.panel {
+    position: absolute;
+    top: 100%;
+    right: var(--gutter);
+    left: var(--gutter);
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border: 1.5px solid var(--web-line);
+    border-radius: 24px;
+    background: var(--web-surface);
+    box-shadow: 0 8px 0 0 var(--web-shadow);
+
+    &[hidden] {
+        display: none;
+    }
+
+    @media (min-width: 900px) {
+        display: none;
+    }
+}
+
+.panelLink {
+    padding: 14px 16px;
+    border-radius: 16px;
+    color: var(--web-text);
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+
+    &:active {
+        background: var(--web-surface-2);
+    }
+}

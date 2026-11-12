@@ -11,9 +11,12 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--web-bg);
+    color: var(--web-text);
+    font-family: var(--font-body);
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 h1,
@@ -44,6 +47,11 @@ a {
     color: inherit;
 }
 
+:focus-visible {
+    outline: 3px solid var(--web-brand);
+    outline-offset: 3px;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -56,14 +64,35 @@ a {
     border: 0;
 }
 
+.skip-link {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 100;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: var(--web-invert);
+    color: var(--web-on-invert);
+    transform: translateY(-200%);
+
+    &:focus {
+        transform: none;
+    }
+}
+
+.wrap {
+    width: 100%;
+    max-width: calc(var(--page-max) + 2 * var(--gutter));
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
 
-    *,
-    *::before,
-    *::after {
+    * {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
     }

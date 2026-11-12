@@ -1,86 +1,55 @@
-import docIcon from '../../assets/icons/doc.svg';
-import gridIcon from '../../assets/icons/grid.svg';
-import bubbleIcon from '../../assets/icons/bubble.svg';
-import Button from '../../components/Button/Button';
+import curl from '../../assets/v21/curl.svg';
 import MaskIcon from '../../components/MaskIcon/MaskIcon';
-import SectionHeader from '../../components/SectionHeader/SectionHeader';
 import { sectionIds } from '../../content/links';
-import { focusAskInput } from '../../lib/focusAskInput';
 import styles from './HowItWorks.module.scss';
 
-const steps = [
+const STEPS = [
     {
-        icon: docIcon,
-        size: [40, 51],
-        offset: [-2, -2],
-        title: 'Upload your material',
-        lines: ['Add your course PDF or exam notes.'],
+        n: '01',
+        tone: 'badgeSun',
+        title: 'Drop in your notes',
+        body: 'A PDF, slides or a photo of your notebook. Up to five at a time.',
+        short: 'A PDF, slides or a photo. Up to five at a time.',
     },
     {
-        icon: gridIcon,
-        size: [44, 48],
-        offset: [0, 0],
-        title: 'Get questions to practise',
-        lines: ['Florence turns the material into focused', 'exam questions.'],
+        n: '02',
+        tone: 'badgeBrand',
+        title: "Practise like it's the exam",
+        body: 'Florence turns them into questions and marks each answer.',
+        short: 'Florence asks the questions and marks each answer.',
     },
     {
-        icon: bubbleIcon,
-        size: [43, 45],
-        offset: [0, 3],
-        title: 'See the answers clearly',
-        lines: ['Check your answers, then understand why.'],
+        n: '03',
+        tone: 'badgeLeaf',
+        title: 'Fix what you missed',
+        body: 'A clear explanation for every miss, then another go.',
+        short: 'A clear explanation, then another go.',
     },
 ];
 
-const scaled = (n) => `calc(${n} * var(--icon-unit))`;
-
 const HowItWorks = () => (
-    <section
-        id={sectionIds.howItWorks}
-        className={`section ${styles.root}`}
-        aria-labelledby="how-it-works-title"
-    >
-        <SectionHeader
-            titleId="how-it-works-title"
-            eyebrow="How it works"
-            title="From your notes to exam-ready"
-            subtitle="Upload your material. Practice what matters. Understand every answer."
-        />
-
-        <ol className={styles.steps}>
-            {steps.map((step, i) => (
-                <li key={step.title} className={styles.step}>
-                    <div className={styles.iconSlot}>
-                        <MaskIcon
-                            src={step.icon}
-                            width={scaled(step.size[0])}
-                            height={scaled(step.size[1])}
-                            className={styles.icon}
-                            style={{
-                                transform: `translate(${scaled(step.offset[0])}, ${scaled(step.offset[1])})`,
-                            }}
-                        />
-                    </div>
-                    <h3 className={styles.title}>
-                        <span className={styles.number}>{i + 1}.</span>
-                        {step.title}
-                    </h3>
-                    <p className={styles.description}>
-                        {step.lines.map((line, j) => (
-                            <span key={line}>
-                                {j > 0 && ' '}
-                                {line}
-                            </span>
-                        ))}
-                    </p>
-                </li>
-            ))}
-        </ol>
-
-        <div className="section-action">
-            <Button variant="solid" onClick={focusAskInput}>
-                Try it now
-            </Button>
+    <section id={sectionIds.howItWorks} className={styles.section} aria-labelledby="how-title">
+        <div className={styles.inner}>
+            <h2 id="how-title" className={styles.title}>
+                Three steps. No all-nighter.
+            </h2>
+            <ol className={styles.steps}>
+                {STEPS.map((step) => (
+                    <li key={step.n} className={styles.step}>
+                        <span className={`${styles.badge} ${styles[step.tone]}`} aria-hidden="true">
+                            {step.n}
+                        </span>
+                        <div className={styles.text}>
+                            <h3 className={styles.stepTitle}>{step.title}</h3>
+                            <p className={styles.body}>
+                                <span className={styles.long}>{step.body}</span>
+                                <span className={styles.short}>{step.short}</span>
+                            </p>
+                        </div>
+                    </li>
+                ))}
+                <MaskIcon src={curl} className={styles.curl} />
+            </ol>
         </div>
     </section>
 );
